@@ -196,7 +196,7 @@ def build_doll(gender, outfit, act, pose_in, ctx):
             hd.append('<g transform="translate(0 96) scale(1.6) translate(0 -100)"><path d="M -44 100 Q -46 34 0 30 Q 46 34 44 100 Q 0 84 -44 100 Z" fill="#f2c230"/><path d="M -70 108 Q 0 70 70 108 Q 64 126 42 116 Q 0 90 -42 116 Q -64 126 -70 108 Z" fill="#d9a91c"/></g>')
         elif outfit == "cold":
             hd.append('<g transform="translate(0 56) scale(1.5) translate(0 -100)"><path d="M -42 108 Q -46 30 0 24 Q 46 30 42 108 Q 0 92 -42 108 Z" fill="#3e5ca8"/><path d="M -44 100 Q 0 84 44 100 L 46 128 Q 0 112 -46 128 Z" fill="#f0e8d0"/><circle cx="0" cy="16" r="20" fill="#eef1f8"/></g>')
-    g.append(f'<g transform="translate({pt(neck_base)}) rotate({f1(lean+tilt)}) translate(0 -236)">'+"".join(hd)+'</g>')
+    g.append(f'<g transform="translate({pt(neck_base)}) rotate({f1(lean+tilt)}) translate(0 -236)"><g class="hb hb-{gender}">'+"".join(hd)+'</g></g>')
     # -- props
     props = ""
     def hand_of(role): s = side_inner if role == "inner" else -side_inner; return s, hands[s]
@@ -246,6 +246,17 @@ def fireworks_svg():
         o += f'<g stroke="#ffe9a0" stroke-width="2.5" stroke-linecap="round" opacity=".8"><path d="M {x-9} {y} h 18 M {x} {y-9} v 18 M {x-6} {y-6} l 12 12 M {x+6} {y-6} l -12 12"/></g>'
     return o
 
+def head_bob_css():
+    """Head sway around the neck: rare (every ~30-40 s), different period per figure so it looks irregular.
+    First sway comes after >= 20 s. Respects prefers-reduced-motion."""
+    seq = [0, -6, 5, -4, 3, -1.5, 0]
+    css = ""
+    for g, (period, start, dur) in {"male": (29, 21, 2.8), "female": (41, 27, 2.8)}.items():
+        pts = [(0, 0), (start/period*100, 0)] + [((start + dur*i/(len(seq)-1))/period*100, a) for i, a in enumerate(seq)] + [(100, 0)]
+        kf = "".join(f"{x:.2f}% {{transform:rotate({a}deg)}}" for x, a in pts)
+        css += f"@keyframes bob-{g} {{{kf}}} .hb-{g} {{animation: bob-{g} {period}s ease-in-out infinite; transform-origin: 0px 236px}}"
+    return f'<style>@media (prefers-reduced-motion: no-preference) {{{css}}}</style>'
+
 def part(name):
     p = PARTS / f"{name}.svg"
     if not p.exists(): sys.exit(f"missing part: {name}")
@@ -285,6 +296,7 @@ def build(activity, outfit, xmas=False):
         '<filter id="shadow" x="-30%" y="-10%" width="160%" height="130%"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/><feGaussianBlur stdDeviation="7"/></filter>'
         '<filter id="fog" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="26"/></filter>'
         f'<clipPath id="floorclip"><rect y="{GROUND}" width="{W}" height="{H-GROUND}"/></clipPath></defs>')
+    defs += head_bob_css()
     figs = out_svg["female"] + out_svg["male"]
     if STYLE == "alien":
         return alien_scene(a, outfit, figs, defs, tint, beam)

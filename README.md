@@ -31,3 +31,6 @@ Styrs av `seasons` i `weather/rules.json` (svensk lokal tid, Europe/Stockholm):
 - **Nyårsfyrverkeri:** 31 dec 23:30 till 1 jan 01:30. Aktiviteten `fireworks` ersätter vädrets aktivitet (kläderna följer fortfarande vädret).
 - Förhandsgranska på sajten med `?datum=2026-12-31T23:45:00+01:00` i URL:en.
 - Julmössorna finns bara i Greys-stilen (`--shop` bygger dem inte).
+
+## Animation
+Gubbarna gungar på huvudet ibland (CSS i varje SVG, ingen JavaScript). Mannen var 29:e sekund och kvinnan var 41:a, första gungningen efter 21 respektive 27 s, så det ser oregelbundet ut. Avstängt vid `prefers-reduced-motion`.
