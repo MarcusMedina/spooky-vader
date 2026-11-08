@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Wooden club with moss and mushroom</title>
+<defs><linearGradient id="club-moss" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#7ab52d"/><stop offset="100%" stop-color="#3b5412"/></linearGradient><linearGradient id="club-wood" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3d2819"/><stop offset="50%" stop-color="#5c402b"/><stop offset="100%" stop-color="#21150d"/></linearGradient></defs>
+<g id="club-club-group" transform-origin="140 590">
+          <path d="M 100 680 L 240 430" stroke="url(#club-wood)" stroke-width="30" stroke-linecap="round" />
+          <path d="M 75 725 C 30 700 20 600 75 580 C 120 560 150 620 120 700 Z" fill="url(#club-wood)" stroke="#170f09" stroke-width="4" />
+          <path d="M 60 625 Q 90 645 75 680" stroke="#140d08" stroke-width="5" fill="none" />
+          <path d="M 95 605 Q 110 635 100 655" stroke="#140d08" stroke-width="4" fill="none" />
+          <path d="M 50 630 C 45 590 90 575 100 600 C 80 610 65 620 50 630 Z" fill="url(#club-moss)" />
+          <path d="M 65 590 Q 67 575 70 575" stroke="#e0d7c6" stroke-width="4" stroke-linecap="round" fill="none" />
+          <ellipse cx="70" cy="573" rx="7" ry="4" fill="#d93b3b" />
+        </g>
+      
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Ears</title>
+<defs><linearGradient id="ears-skin" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:var(--skin-hi,#7c946b)"/><stop offset="45%" style="stop-color:var(--skin,#556c47)"/><stop offset="100%" style="stop-color:var(--skin-lo,#34422b)"/></linearGradient></defs>
+<g id="ears-ears-group">
+        <g id="ears-left-ear">
+          <path d="M 300 290 C 180 230 145 310 260 360 Z" fill="url(#ears-skin)" stroke-width="4" style="stroke:var(--skin-dd,#2b3823)" />
+          <path d="M 280 290 C 190 260 175 300 245 335 Z" opacity="0.7" style="fill:var(--skin-ear,#2d3a24)" />
+          </g>
+        <g id="ears-right-ear">
+          <path d="M 540 290 C 660 230 695 310 580 360 Z" fill="url(#ears-skin)" stroke-width="4" style="stroke:var(--skin-dd,#2b3823)" />
+          <path d="M 560 290 C 650 260 665 300 595 335 Z" opacity="0.7" style="fill:var(--skin-ear,#2d3a24)" />
+        </g>
+      </g>
+
+      
+      
+</svg>

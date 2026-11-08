@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Hair with two mossy braids and flowers</title>
+<defs><linearGradient id="hairf-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A3B22"/><stop offset=".55" stop-color="#4A2014"/><stop offset="1" stop-color="#26100A"/></linearGradient>
+<linearGradient id="hairf-m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8CC63A"/><stop offset="1" stop-color="#3b5412"/></linearGradient>
+<g id="hairf-fl"><g fill="#fff"><circle cx="0" cy="-9" r="7"/><circle cx="9" cy="-3" r="7"/><circle cx="5" cy="8" r="7"/><circle cx="-5" cy="8" r="7"/><circle cx="-9" cy="-3" r="7"/></g><circle r="5" fill="#F2B632" stroke="#8a5a00" stroke-width="1.5"/></g>
+<g id="hairf-braid"><path d="M 304 296 C 262 340 252 420 270 470 C 280 520 276 560 286 600" fill="none" stroke="#1d0b06" stroke-width="44" stroke-linecap="round"/>
+<path d="M 304 296 C 262 340 252 420 270 470 C 280 520 276 560 286 600" fill="none" stroke="url(#hairf-g)" stroke-width="36" stroke-linecap="round"/>
+<g fill="#5a2a18" stroke="#1d0b06" stroke-width="2.5"><ellipse cx="270" cy="372" rx="19" ry="12" transform="rotate(25 270 372)"/><ellipse cx="260" cy="418" rx="19" ry="12" transform="rotate(-20 260 418)"/><ellipse cx="268" cy="464" rx="19" ry="12" transform="rotate(20 268 464)"/><ellipse cx="276" cy="510" rx="19" ry="12" transform="rotate(-20 276 510)"/><ellipse cx="282" cy="556" rx="19" ry="12" transform="rotate(20 282 556)"/></g>
+<path d="M 268 586 C 250 600 262 628 288 620 C 314 626 322 596 300 584 Z" fill="url(#hairf-m)" stroke="#27380B" stroke-width="2.4"/>
+<use href="#hairf-fl" x="276" y="600"/></g></defs>
+<use href="#hairf-braid"/><use href="#hairf-braid" transform="translate(840 0) scale(-1 1)"/>
+<path d="M 302 296 C 270 240 276 190 318 180 C 340 140 400 130 420 142 C 440 130 500 140 524 180 C 566 190 570 240 538 296 C 520 262 490 244 460 252 C 440 240 400 240 380 252 C 350 244 322 262 302 296 Z" fill="url(#hairf-g)" stroke="#1d0b06" stroke-width="3.5" stroke-linejoin="round"/>
+<g fill="none" stroke="#B8643C" stroke-width="3" stroke-linecap="round" opacity=".6"><path d="M 330 200 Q 360 168 400 164"/><path d="M 440 160 Q 480 164 508 196"/><path d="M 420 150 Q 418 190 400 244"/></g>
+<path d="M 362 170 C 352 138 392 126 402 150 C 418 128 452 136 444 162 C 464 152 474 176 454 182 C 430 188 390 190 362 170 Z" fill="url(#hairf-m)" stroke="#27380B" stroke-width="2.4"/>
+<use href="#hairf-fl" x="338" y="196"/><use href="#hairf-fl" x="500" y="204" transform="translate(500 204) scale(.8) translate(-500 -204)"/><use href="#hairf-fl" x="420" y="140"/>
+</svg>

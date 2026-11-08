@@ -1,0 +1,65 @@
+{
+  "outfits": {
+    "rain": "Regnkläder",
+    "cold": "Stickat och mössa",
+    "summer": "Sommarkläder",
+    "mild": "Mysig luvtröja"
+  },
+  "activities": {
+    "hide-thunder": {
+      "label": "Gömmer sig för åskan",
+      "line": "Det mullrar. Ingen är modig, alla håller hand."
+    },
+    "stargaze": {
+      "label": "Tittar på stjärnorna",
+      "line": "Natt och uppehåll. Lyktan lyser upp skogen."
+    },
+    "hold-hats": {
+      "label": "Håller i mössorna",
+      "line": "Det blåser. Hårstråna ger upp först."
+    },
+    "ski": {
+      "label": "Åker skidor",
+      "line": "Snö och vindstilla. Skidorna åker fram."
+    },
+    "snowball": {
+      "label": "Snöbollskrig",
+      "line": "Lite vind och snö. Någon kommer bli träffad."
+    },
+    "dance-in-rain": {
+      "label": "Dansar i regnet",
+      "line": "Varmt regn är bara en dusch med musik."
+    },
+    "puddle-walk": {
+      "label": "Hoppar i pölar",
+      "line": "Regnjacka på. Pölarna är gratis."
+    },
+    "umbrella-sleet": {
+      "label": "Kämpar med paraplyet",
+      "line": "Snöblandat regn. Paraplyet vinner inte."
+    },
+    "sunbathe": {
+      "label": "Solar",
+      "line": "Sol och vindstilla. Solglasögonen på, handduken ut."
+    },
+    "tennis": {
+      "label": "Spelar tennis",
+      "line": "Lagom varmt och vindstilla. Bollen i luften."
+    },
+    "stroll": {
+      "label": "Tar en promenad",
+      "line": "Inget märkvärdigt väder. Bara en promenad."
+    },
+    "fog-lantern": {
+      "label": "Går med lykta i dimman",
+      "line": "Dimman ligger tät. Lyktan hittar vägen."
+    },
+    "fireworks": {
+      "label": "Nyårsfyrverkeri",
+      "line": "Gott nytt år! Fyrverkerierna lyser upp natthimlen."
+    }
+  },
+  "seasons": {
+    "xmas": "Julmössorna är på fram till jul."
+  }
+}

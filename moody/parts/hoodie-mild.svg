@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Mustard hoodie</title>
+<defs><linearGradient id="hood-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7CB6B"/><stop offset=".55" stop-color="#E2A23A"/><stop offset="1" stop-color="#A9701B"/></linearGradient></defs>
+<path d="M 264 462 Q 420 392 576 462 L 600 604 L 608 724 Q 420 762 232 724 L 240 604 Z" fill="url(#hood-b)" stroke="#5B3A0A" stroke-width="6" stroke-linejoin="round"/>
+<path d="M 292 480 Q 270 560 282 660" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" opacity=".28"/>
+<path d="M 322 624 L 518 624 L 548 700 Q 420 728 292 700 Z" fill="#D4932C" stroke="#5B3A0A" stroke-width="5" stroke-linejoin="round"/>
+<path d="M 322 624 Q 420 650 518 624" fill="none" stroke="#8A5A12" stroke-width="3" opacity=".7"/>
+<path d="M 236 716 Q 420 756 604 716" fill="none" stroke="#8A5A12" stroke-width="22" stroke-linecap="round"/><path d="M 244 716 Q 420 754 596 716" fill="none" stroke="#F7CB6B" stroke-width="6" stroke-dasharray="6 6" stroke-linecap="round" opacity=".7"/>
+</svg>

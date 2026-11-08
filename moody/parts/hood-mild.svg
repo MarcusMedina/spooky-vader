@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Hood resting on shoulders</title>
+<defs><linearGradient id="hoodh-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C98A27"/><stop offset="1" stop-color="#8A5A12"/></linearGradient></defs>
+<path d="M 312 440 Q 420 398 528 440 Q 548 482 508 506 Q 420 530 332 506 Q 292 482 312 440 Z" fill="url(#hoodh-b)" stroke="#5B3A0A" stroke-width="5" stroke-linejoin="round"/>
+<path d="M 340 470 Q 420 494 500 470" fill="none" stroke="#5B3A0A" stroke-width="4" opacity=".6"/>
+<path d="M 392 500 Q 384 548 392 580 M 448 500 Q 456 548 448 580" fill="none" stroke="#F2E8D0" stroke-width="5" stroke-linecap="round"/>
+<circle cx="392" cy="584" r="7" fill="#5B3A0A"/><circle cx="448" cy="584" r="7" fill="#5B3A0A"/>
+</svg>

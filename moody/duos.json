@@ -1,0 +1,423 @@
+{
+ "layout": {
+  "width": 1090,
+  "height": 900,
+  "male": {
+   "tx": 25,
+   "ty": 30,
+   "s": 0.96,
+   "variant": "default"
+  },
+  "female": {
+   "tx": 420,
+   "ty": 64,
+   "s": 0.92,
+   "variant": "blue"
+  }
+ },
+ "outfits": {
+  "rain": {
+   "ground": [],
+   "male": [
+    "tail",
+    "arm-left",
+    "sleeve-left-rain",
+    "hand-left",
+    "club",
+    "legs",
+    "boots-rain",
+    "torso",
+    "coat-rain",
+    "arm-right",
+    "sleeve-right-rain",
+    "hand-right",
+    "ears",
+    "earring-left",
+    "skull",
+    "brows",
+    "eyes",
+    "nose",
+    "tusks",
+    "mouth",
+    "mustache",
+    "hat-rain"
+   ],
+   "female": [
+    "tail",
+    "arm-left",
+    "sleeve-left-rain",
+    "hand-left",
+    "legs",
+    "boots-rain",
+    "torso",
+    "coat-rain",
+    "arm-right",
+    "sleeve-right-rain",
+    "hand-right",
+    "ears",
+    "earring-left-big",
+    "earring-right-big",
+    "skull",
+    "brows",
+    "eyes",
+    "eyelashes",
+    "nose",
+    "tusks-female",
+    "mouth",
+    "hair-female",
+    "hat-rain"
+   ]
+  },
+  "cold": {
+   "ground": [
+    "snow-ground"
+   ],
+   "male": [
+    "tail",
+    "arm-left",
+    "sleeve-left-knit",
+    "hand-left",
+    "club",
+    "legs",
+    "torso",
+    "sweater-knit",
+    "arm-right",
+    "sleeve-right-knit",
+    "hand-right",
+    "ears",
+    "earring-left",
+    "skull",
+    "brows",
+    "eyes",
+    "nose",
+    "tusks",
+    "mouth",
+    "mustache",
+    "hat-beanie"
+   ],
+   "female": [
+    "tail",
+    "arm-left",
+    "sleeve-left-knit",
+    "hand-left",
+    "legs",
+    "torso",
+    "sweater-knit",
+    "arm-right",
+    "sleeve-right-knit",
+    "hand-right",
+    "ears",
+    "earring-left-big",
+    "earring-right-big",
+    "skull",
+    "brows",
+    "eyes",
+    "eyelashes",
+    "nose",
+    "tusks-female",
+    "mouth",
+    "hair-female",
+    "hat-beanie"
+   ]
+  },
+  "summer": {
+   "ground": [],
+   "male": [
+    "tail",
+    "arm-left",
+    "hand-left",
+    "club",
+    "legs",
+    "torso",
+    "shorts-floral",
+    "arm-right",
+    "hand-right",
+    "ears",
+    "earring-left",
+    "skull",
+    "brows",
+    "eyes",
+    "nose",
+    "tusks",
+    "mouth",
+    "mustache",
+    "hair-male",
+    "moss"
+   ],
+   "female": [
+    "tail",
+    "arm-left",
+    "hand-left",
+    "legs",
+    "torso",
+    "dress-floral",
+    "arm-right",
+    "hand-right",
+    "ears",
+    "earring-left-big",
+    "earring-right-big",
+    "necklace",
+    "skull",
+    "brows",
+    "eyes",
+    "eyelashes",
+    "nose",
+    "tusks-female",
+    "mouth",
+    "hair-female"
+   ]
+  },
+  "mild": {
+   "ground": [],
+   "male": [
+    "tail",
+    "arm-left",
+    "sleeve-left-hoodie",
+    "hand-left",
+    "club",
+    "legs",
+    "torso",
+    "hoodie-mild",
+    "arm-right",
+    "sleeve-right-hoodie",
+    "hand-right",
+    "hood-mild",
+    "ears",
+    "earring-left",
+    "skull",
+    "brows",
+    "eyes",
+    "nose",
+    "tusks",
+    "mouth",
+    "mustache",
+    "hair-male",
+    "moss"
+   ],
+   "female": [
+    "tail",
+    "arm-left",
+    "sleeve-left-hoodie",
+    "hand-left",
+    "legs",
+    "torso",
+    "hoodie-mild",
+    "arm-right",
+    "sleeve-right-hoodie",
+    "hand-right",
+    "hood-mild",
+    "ears",
+    "earring-left-big",
+    "earring-right-big",
+    "skull",
+    "brows",
+    "eyes",
+    "eyelashes",
+    "nose",
+    "tusks-female",
+    "mouth",
+    "hair-female"
+   ]
+  }
+ },
+ "activities": {
+  "hide-thunder": {
+   "ground": [
+    "storm-wide"
+   ],
+   "front": [
+    "rain"
+   ],
+   "pose": {
+    "male": {
+     "rot": 4
+    },
+    "female": {
+     "rot": -4
+    }
+   },
+   "male_extra": [],
+   "female_extra": [],
+   "drop_male": []
+  },
+  "stargaze": {
+   "ground": [
+    "night-sky-wide"
+   ],
+   "male_extra": [
+    "lantern-left"
+   ],
+   "drop_male": [
+    "club"
+   ],
+   "front": [],
+   "female_extra": [],
+   "pose": {}
+  },
+  "hold-hats": {
+   "front": [
+    "wind-wide"
+   ],
+   "pose": {
+    "male": {
+     "rot": 6
+    },
+    "female": {
+     "rot": 6
+    }
+   },
+   "ground": [],
+   "male_extra": [],
+   "female_extra": [],
+   "drop_male": []
+  },
+  "ski": {
+   "front": [
+    "snow"
+   ],
+   "male_extra": [
+    "skis",
+    "pole-left"
+   ],
+   "female_extra": [
+    "skis",
+    "pole-right"
+   ],
+   "drop_male": [
+    "club"
+   ],
+   "ground": [],
+   "pose": {}
+  },
+  "snowball": {
+   "front": [
+    "snow",
+    "snowball-flying-wide"
+   ],
+   "male_extra": [
+    "snowball-left"
+   ],
+   "female_extra": [
+    "snowball-right"
+   ],
+   "drop_male": [
+    "club"
+   ],
+   "pose": {
+    "male": {
+     "rot": -3
+    },
+    "female": {
+     "rot": 3
+    }
+   },
+   "ground": []
+  },
+  "dance-in-rain": {
+   "ground": [
+    "puddles-wide"
+   ],
+   "front": [
+    "rain",
+    "notes-wide"
+   ],
+   "pose": {
+    "male": {
+     "rot": -6,
+     "dy": -14
+    },
+    "female": {
+     "rot": 6
+    }
+   },
+   "male_extra": [],
+   "female_extra": [],
+   "drop_male": []
+  },
+  "puddle-walk": {
+   "ground": [
+    "puddles-wide"
+   ],
+   "front": [
+    "rain"
+   ],
+   "pose": {
+    "male": {
+     "dy": -22
+    }
+   },
+   "male_extra": [],
+   "female_extra": [],
+   "drop_male": []
+  },
+  "umbrella-sleet": {
+   "ground": [
+    "umbrella-wide"
+   ],
+   "front": [
+    "rain"
+   ],
+   "male_extra": [],
+   "female_extra": [],
+   "drop_male": [],
+   "pose": {}
+  },
+  "sunbathe": {
+   "ground": [
+    "sun-wide",
+    "towel-wide"
+   ],
+   "male_extra": [
+    "shades"
+   ],
+   "female_extra": [
+    "shades"
+   ],
+   "drop_male": [
+    "club"
+   ],
+   "front": [],
+   "pose": {}
+  },
+  "tennis": {
+   "front": [
+    "tennis-ball-wide"
+   ],
+   "male_extra": [
+    "racket-left"
+   ],
+   "female_extra": [
+    "racket-right"
+   ],
+   "drop_male": [
+    "club"
+   ],
+   "ground": [],
+   "pose": {}
+  },
+  "stroll": {
+   "front": [
+    "leaves-wide"
+   ],
+   "ground": [],
+   "male_extra": [],
+   "female_extra": [],
+   "drop_male": [],
+   "pose": {}
+  },
+  "fog-lantern": {
+   "front": [
+    "fog-wide"
+   ],
+   "male_extra": [
+    "lantern-left"
+   ],
+   "drop_male": [
+    "club"
+   ],
+   "ground": [],
+   "female_extra": [],
+   "pose": {}
+  }
+ }
+}

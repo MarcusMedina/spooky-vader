@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Falling rain and puddle ripples</title>
+<defs><linearGradient id="rain-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B8DEF8" stop-opacity="0"/><stop offset="1" stop-color="#B8DEF8" stop-opacity=".75"/></linearGradient></defs>
+<g stroke="url(#rain-s)" stroke-width="3.5" stroke-linecap="round" fill="none">
+<path d="M 90 40 l -22 70 M 170 -10 l -24 76 M 250 60 l -22 70 M 330 10 l -24 76 M 410 70 l -22 70 M 520 0 l -24 76 M 600 66 l -22 70 M 690 14 l -24 76 M 780 70 l -22 70 M 850 0 l -24 76 M 40 220 l -22 70 M 130 300 l -22 70 M 750 250 l -22 70 M 840 330 l -22 70 M 60 420 l -22 70 M 840 470 l -22 70 M 100 560 l -22 70 M 800 600 l -22 70 M 60 700 l -22 70 M 850 720 l -22 70 M 210 140 l -22 70 M 650 180 l -22 70"/></g>
+<g fill="none" stroke="#B8DEF8" stroke-width="3" opacity=".55"><ellipse cx="160" cy="850" rx="34" ry="8"/><ellipse cx="160" cy="850" rx="18" ry="4"/><ellipse cx="740" cy="838" rx="40" ry="9"/><ellipse cx="740" cy="838" rx="20" ry="4.5"/><ellipse cx="560" cy="866" rx="26" ry="6"/></g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Right hand</title>
+<circle cx="580" cy="615" r="35" style="fill:var(--skin-hand,#425537)" />
+      
+<circle cx="563" cy="640" r="12" style="fill:var(--skin-finger,#4d643e)" />
+      
+<circle cx="587" cy="645" r="12" style="fill:var(--skin-finger,#4d643e)" />
+      
+<circle cx="610" cy="635" r="10" style="fill:var(--skin-finger,#4d643e)" />
+    
+
+</svg>

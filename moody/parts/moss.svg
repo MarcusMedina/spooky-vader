@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Moss tuft with twigs and leaves</title>
+<defs><linearGradient id="moss-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8CC63A"/><stop offset="1" stop-color="#3b5412"/></linearGradient></defs>
+<path d="M 362 176 C 352 140 392 128 402 152 C 418 130 452 138 444 164 C 464 154 474 178 454 184 C 430 190 390 192 362 176 Z" fill="url(#moss-g)" stroke="#27380B" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M 395 150 L 385 108 M 385 124 L 374 118 M 388 118 L 397 112" stroke="#332113" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M 448 160 L 472 118 M 462 140 L 474 146" stroke="#332113" stroke-width="3" stroke-linecap="round" fill="none"/>
+<path d="M 374 118 Q 364 113 372 106 Q 380 113 374 118 Z M 474 118 Q 484 113 482 103 Q 472 110 474 118 Z" fill="#557a2b" stroke="#2C4415" stroke-width="1.2"/>
+</svg>

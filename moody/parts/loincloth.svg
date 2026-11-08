@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Leather loincloth</title>
+<defs><linearGradient id="loincloth-cloth" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#523e30"/><stop offset="100%" stop-color="#231913"/></linearGradient></defs>
+<g id="loincloth-outfit-group">
+      <path d="M 280 570 Q 420 615 560 565 L 535 690 Q 450 730 310 680 Z" fill="url(#loincloth-cloth)" stroke="#170f0a" stroke-width="3" />
+      <path d="M 370 595 L 390 705 L 430 695 L 410 590 Z" fill="#19110b" opacity="0.6" />
+      <path d="M 285 575 Q 420 625 555 575" stroke="#7a5d39" stroke-width="14" fill="none" stroke-dasharray="16,6" />
+    </g>
+
+    
+    
+</svg>

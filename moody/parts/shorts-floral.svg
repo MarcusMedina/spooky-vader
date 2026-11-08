@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Floral shorts</title>
+<defs><linearGradient id="shorts-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4FC3D9"/><stop offset="1" stop-color="#1F7E9A"/></linearGradient>
+<g id="shorts-f"><g fill="#FFE45C"><circle cx="0" cy="-7" r="5.5"/><circle cx="7" cy="-2" r="5.5"/><circle cx="4" cy="6" r="5.5"/><circle cx="-4" cy="6" r="5.5"/><circle cx="-7" cy="-2" r="5.5"/></g><circle r="3.2" fill="#E8584A"/></g>
+<clipPath id="shorts-c"><path d="M 292 574 Q 420 596 548 574 L 574 704 L 442 716 L 420 650 L 398 716 L 266 704 Z"/></clipPath></defs>
+<path d="M 292 574 Q 420 596 548 574 L 574 704 L 442 716 L 420 650 L 398 716 L 266 704 Z" fill="url(#shorts-b)" stroke="#0E3F50" stroke-width="5" stroke-linejoin="round"/>
+<g clip-path="url(#shorts-c)"><use href="#shorts-f" x="320" y="620"/><use href="#shorts-f" x="500" y="624"/><use href="#shorts-f" x="300" y="680"/><use href="#shorts-f" x="540" y="684"/><use href="#shorts-f" x="372" y="690"/><use href="#shorts-f" x="470" y="692"/><use href="#shorts-f" x="420" y="610"/></g>
+<path d="M 292 574 Q 420 596 548 574" fill="none" stroke="#0E3F50" stroke-width="12" stroke-linecap="round"/><path d="M 296 574 Q 420 596 544 574" fill="none" stroke="#F4EFE0" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 9"/>
+<path d="M 420 650 L 420 600" stroke="#0E3F50" stroke-width="3"/>
+</svg>

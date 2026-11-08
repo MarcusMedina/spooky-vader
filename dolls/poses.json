@@ -1,0 +1,486 @@
+{
+ "_doc": "Angles in degrees. 'inner' = arm/leg nearest the partner. Arm: {au,af} absolute angles from straight down, positive = outward/up; or {hold:true} joined hands; or {to:[ref,dx,dy]} IK target (ref: pelvis|head|mid|midhi; dx mirrored outward). Leg: {t,s,k} thigh angle, shin angle, k = thigh foreshortening 0..1 (knee raised).",
+ "default": {
+  "lean": 0,
+  "tilt": 0,
+  "jump": 0,
+  "inner_arm": {
+   "hold": true
+  },
+  "outer_arm": {
+   "au": 10,
+   "af": 16
+  },
+  "inner_leg": {
+   "t": 6,
+   "s": 2,
+   "k": 1
+  },
+  "outer_leg": {
+   "t": 6,
+   "s": 2,
+   "k": 1
+  }
+ },
+ "activities": {
+  "stroll": {
+   "male": {
+    "lean": 3,
+    "outer_arm": {
+     "au": 16,
+     "af": 26
+    },
+    "outer_leg": {
+     "t": 12,
+     "s": 0,
+     "k": 0.9
+    }
+   },
+   "female": {
+    "lean": -3,
+    "outer_arm": {
+     "au": 16,
+     "af": 26
+    },
+    "outer_leg": {
+     "t": 12,
+     "s": 0,
+     "k": 0.9
+    }
+   }
+  },
+  "hold-hats": {
+   "male": {
+    "lean": 10,
+    "tilt": 6,
+    "outer_arm": {
+     "to": [
+      "head",
+      46,
+      -78
+     ]
+    },
+    "inner_leg": {
+     "t": 14,
+     "s": 2
+    },
+    "outer_leg": {
+     "t": 14,
+     "s": 2
+    }
+   },
+   "female": {
+    "lean": 10,
+    "tilt": 6,
+    "outer_arm": {
+     "to": [
+      "head",
+      46,
+      -78
+     ]
+    },
+    "inner_leg": {
+     "t": 14,
+     "s": 2
+    },
+    "outer_leg": {
+     "t": 14,
+     "s": 2
+    }
+   }
+  },
+  "ski": {
+   "male": {
+    "lean": 0,
+    "inner_arm": {
+     "au": 16,
+     "af": 10
+    },
+    "outer_arm": {
+     "au": 34,
+     "af": 20
+    },
+    "inner_leg": {
+     "t": 26,
+     "s": -6
+    },
+    "outer_leg": {
+     "t": 26,
+     "s": -6
+    }
+   },
+   "female": {
+    "lean": 0,
+    "inner_arm": {
+     "au": 16,
+     "af": 10
+    },
+    "outer_arm": {
+     "au": 34,
+     "af": 20
+    },
+    "inner_leg": {
+     "t": 26,
+     "s": -6
+    },
+    "outer_leg": {
+     "t": 26,
+     "s": -6
+    }
+   }
+  },
+  "snowball": {
+   "male": {
+    "lean": -6,
+    "outer_arm": {
+     "to": [
+      "head",
+      70,
+      -96
+     ]
+    },
+    "inner_arm": {
+     "au": 16,
+     "af": 26
+    },
+    "inner_leg": {
+     "t": 22,
+     "s": 0
+    },
+    "outer_leg": {
+     "t": 22,
+     "s": 0
+    }
+   },
+   "female": {
+    "lean": 6,
+    "outer_arm": {
+     "to": [
+      "head",
+      70,
+      -96
+     ]
+    },
+    "inner_arm": {
+     "au": 16,
+     "af": 26
+    },
+    "inner_leg": {
+     "t": 22,
+     "s": 0
+    },
+    "outer_leg": {
+     "t": 22,
+     "s": 0
+    }
+   }
+  },
+  "dance-in-rain": {
+   "male": {
+    "lean": -8,
+    "tilt": -6,
+    "jump": 22,
+    "outer_arm": {
+     "au": 120,
+     "af": 140
+    },
+    "outer_leg": {
+     "t": 22,
+     "s": -30,
+     "k": 0.45
+    }
+   },
+   "female": {
+    "lean": 8,
+    "tilt": 6,
+    "jump": 22,
+    "outer_arm": {
+     "au": 120,
+     "af": 140
+    },
+    "outer_leg": {
+     "t": 22,
+     "s": -30,
+     "k": 0.45
+    }
+   }
+  },
+  "puddle-walk": {
+   "male": {
+    "jump": 38,
+    "outer_arm": {
+     "au": 62,
+     "af": 44
+    },
+    "inner_leg": {
+     "t": 16,
+     "s": -14,
+     "k": 0.8
+    },
+    "outer_leg": {
+     "t": 16,
+     "s": -14,
+     "k": 0.8
+    }
+   },
+   "female": {
+    "jump": 38,
+    "outer_arm": {
+     "au": 62,
+     "af": 44
+    },
+    "inner_leg": {
+     "t": 16,
+     "s": -14,
+     "k": 0.8
+    },
+    "outer_leg": {
+     "t": 16,
+     "s": -14,
+     "k": 0.8
+    }
+   }
+  },
+  "umbrella-sleet": {
+   "male": {
+    "lean": 4,
+    "inner_arm": {
+     "to": [
+      "midhi",
+      0,
+      0
+     ]
+    },
+    "outer_arm": {
+     "au": 8,
+     "af": 30
+    }
+   },
+   "female": {
+    "lean": -4,
+    "inner_arm": {
+     "to": [
+      "midhi",
+      0,
+      0
+     ]
+    },
+    "outer_arm": {
+     "au": 8,
+     "af": 30
+    }
+   }
+  },
+  "sunbathe": {
+   "male": {
+    "lean": 2,
+    "inner_arm": {
+     "to": [
+      "pelvis",
+      -70,
+      -6
+     ]
+    },
+    "outer_arm": {
+     "to": [
+      "pelvis",
+      70,
+      -6
+     ]
+    },
+    "inner_leg": {
+     "t": 12,
+     "s": 2
+    },
+    "outer_leg": {
+     "t": 12,
+     "s": 2
+    }
+   },
+   "female": {
+    "lean": -2,
+    "inner_arm": {
+     "to": [
+      "pelvis",
+      -78,
+      -6
+     ]
+    },
+    "outer_arm": {
+     "to": [
+      "pelvis",
+      78,
+      -6
+     ]
+    },
+    "inner_leg": {
+     "t": 12,
+     "s": 2
+    },
+    "outer_leg": {
+     "t": 12,
+     "s": 2
+    }
+   }
+  },
+  "tennis": {
+   "male": {
+    "lean": -6,
+    "outer_arm": {
+     "au": 58,
+     "af": 84
+    },
+    "inner_arm": {
+     "au": 16,
+     "af": 24
+    },
+    "inner_leg": {
+     "t": 20,
+     "s": 4
+    },
+    "outer_leg": {
+     "t": 20,
+     "s": 4
+    }
+   },
+   "female": {
+    "lean": 6,
+    "outer_arm": {
+     "au": 58,
+     "af": 84
+    },
+    "inner_arm": {
+     "au": 16,
+     "af": 24
+    },
+    "inner_leg": {
+     "t": 20,
+     "s": 4
+    },
+    "outer_leg": {
+     "t": 20,
+     "s": 4
+    }
+   }
+  },
+  "stargaze": {
+   "male": {
+    "lean": 2,
+    "tilt": -16,
+    "outer_arm": {
+     "au": 44,
+     "af": 70
+    },
+    "inner_arm": {
+     "hold": true
+    }
+   },
+   "female": {
+    "lean": -2,
+    "tilt": 16,
+    "inner_arm": {
+     "hold": true
+    },
+    "outer_arm": {
+     "au": 150,
+     "af": 160
+    }
+   }
+  },
+  "fog-lantern": {
+   "male": {
+    "lean": 2,
+    "outer_arm": {
+     "au": 52,
+     "af": 84
+    }
+   },
+   "female": {
+    "lean": -2,
+    "tilt": 8,
+    "outer_arm": {
+     "au": 22,
+     "af": 88
+    }
+   }
+  },
+  "hide-thunder": {
+   "male": {
+    "lean": 5,
+    "tilt": 8,
+    "inner_arm": {
+     "to": [
+      "head",
+      -30,
+      -30
+     ]
+    },
+    "outer_arm": {
+     "to": [
+      "head",
+      30,
+      -30
+     ]
+    },
+    "inner_leg": {
+     "t": 24,
+     "s": -8
+    },
+    "outer_leg": {
+     "t": 24,
+     "s": -8
+    }
+   },
+   "female": {
+    "lean": -5,
+    "tilt": -8,
+    "inner_arm": {
+     "to": [
+      "head",
+      -30,
+      -30
+     ]
+    },
+    "outer_arm": {
+     "to": [
+      "head",
+      30,
+      -30
+     ]
+    },
+    "inner_leg": {
+     "t": 24,
+     "s": -8
+    },
+    "outer_leg": {
+     "t": 24,
+     "s": -8
+    }
+   }
+  },
+  "fireworks": {
+   "male": {
+    "lean": 2,
+    "tilt": -16,
+    "outer_arm": {
+     "au": 150,
+     "af": 160
+    },
+    "inner_arm": {
+     "hold": true
+    }
+   },
+   "female": {
+    "lean": -2,
+    "tilt": 16,
+    "inner_arm": {
+     "hold": true
+    },
+    "outer_arm": {
+     "au": 150,
+     "af": 160
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Gold earring, right</title>
+<defs><radialGradient id="earr-g" cx=".3" cy=".3" r=".9"><stop offset="0" stop-color="#FFF0A0"/><stop offset="1" stop-color="#B8860B"/></radialGradient></defs>
+<circle cx="668" cy="322" r="26" fill="none" stroke="#6B4E08" stroke-width="11"/><circle cx="668" cy="322" r="26" fill="none" stroke="url(#earr-g)" stroke-width="7"/>
+<circle cx="668" cy="360" r="8" fill="#C0392B" stroke="#6B1E15" stroke-width="2"/>
+</svg>

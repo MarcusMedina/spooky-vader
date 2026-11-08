@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Falling snow and snow drifts</title>
+
+<g fill="#fff" opacity=".92"><circle cx="80" cy="60" r="7"/><circle cx="190" cy="130" r="5"/><circle cx="300" cy="40" r="6"/><circle cx="470" cy="90" r="7"/><circle cx="600" cy="30" r="5"/><circle cx="700" cy="120" r="7"/><circle cx="820" cy="60" r="6"/><circle cx="60" cy="260" r="6"/><circle cx="140" cy="380" r="7"/><circle cx="770" cy="260" r="6"/><circle cx="840" cy="400" r="7"/><circle cx="90" cy="520" r="5"/><circle cx="810" cy="540" r="6"/><circle cx="60" cy="690" r="7"/><circle cx="850" cy="680" r="5"/><circle cx="250" cy="200" r="4"/><circle cx="640" cy="210" r="5"/><circle cx="380" cy="30" r="4"/><circle cx="540" cy="150" r="4"/></g>
+<g fill="#fff" stroke="#fff" stroke-width="2"><circle cx="720" cy="760" r="30" fill="#F4F8FC"/><circle cx="760" cy="780" r="22" fill="#F4F8FC"/></g>
+</svg>

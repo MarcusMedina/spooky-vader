@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Big umbrella over the pair</title>
+<defs><linearGradient id="umbrellawide-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8584A"/><stop offset="1" stop-color="#A32A1F"/></linearGradient><clipPath id="umbrellawide-c"><path d="M 130 190 Q 130 20 525 20 Q 920 20 920 190 Q 840 160 735 190 Q 630 160 525 190 Q 420 160 315 190 Q 210 160 130 190 Z"/></clipPath></defs>
+<path d="M 130 190 Q 130 20 525 20 Q 920 20 920 190 Q 840 160 735 190 Q 630 160 525 190 Q 420 160 315 190 Q 210 160 130 190 Z" fill="url(#umbrellawide-g)" stroke="#4a110c" stroke-width="6" stroke-linejoin="round"/>
+<g clip-path="url(#umbrellawide-c)" fill="#F7F0E0" opacity=".9"><path d="M 525 20 L 315 190 L 420 190 Z M 525 20 L 735 190 L 630 190 Z M 525 20 L 130 190 L 210 190 Z M 525 20 L 920 190 L 840 190 Z"/></g>
+<path d="M 525 190 L 525 600" stroke="#2a2a2a" stroke-width="8"/><path d="M 525 600 q 0 30 -26 30" fill="none" stroke="#2a2a2a" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Small decorated tusks</title>
+<defs><linearGradient id="tusksf-iv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFBEA"/><stop offset="1" stop-color="#CDBF94"/></linearGradient></defs>
+<g id="tusksf-t"><path d="M 372 428 Q 350 430 340 396 Q 346 392 352 400 Q 366 416 384 414 Z" fill="url(#tusksf-iv)" stroke="#5a4a2a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 358 410 L 372 420" stroke="#E0B030" stroke-width="7" stroke-linecap="round"/><path d="M 358 410 L 372 420" stroke="#FFE680" stroke-width="3" stroke-linecap="round"/></g>
+<use href="#tusksf-t" transform="translate(840 0) scale(-1 1)"/>
+</svg>

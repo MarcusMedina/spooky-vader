@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Flying snowball</title>
+<defs><radialGradient id="snowflying-g" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#B7C6DA"/></radialGradient></defs>
+<path d="M 300 180 Q 420 90 520 160" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="3 12" stroke-linecap="round" opacity=".8"/>
+<circle cx="540" cy="168" r="26" fill="url(#snowflying-g)" stroke="#8795AB" stroke-width="3"/>
+</svg>

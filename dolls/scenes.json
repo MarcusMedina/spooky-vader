@@ -1,0 +1,124 @@
+{
+ "activities": {
+  "stroll": {
+   "front": [
+    "leaves-wide"
+   ]
+  },
+  "hold-hats": {
+   "front": [
+    "wind-wide"
+   ]
+  },
+  "ski": {
+   "front": [
+    "snow"
+   ],
+   "male_props": [
+    "pole:inner",
+    "pole:outer"
+   ],
+   "female_props": [
+    "pole:inner",
+    "pole:outer"
+   ],
+   "male_head": [
+    "skis"
+   ],
+   "female_head": [
+    "skis"
+   ]
+  },
+  "snowball": {
+   "front": [
+    "snow"
+   ],
+   "male_props": [
+    "snowball:outer"
+   ],
+   "female_props": [
+    "snowball:outer"
+   ]
+  },
+  "dance-in-rain": {
+   "floor": [
+    "puddles-wide"
+   ],
+   "front": [
+    "rain",
+    "notes-wide"
+   ]
+  },
+  "puddle-walk": {
+   "floor": [
+    "puddles-wide"
+   ],
+   "front": [
+    "rain"
+   ]
+  },
+  "umbrella-sleet": {
+   "front": [
+    "rain"
+   ],
+   "scene_props": [
+    "umbrella"
+   ]
+  },
+  "sunbathe": {
+   "light": "warm",
+   "back": [
+    "sun-wide"
+   ],
+   "floor": [
+    "towel-wide"
+   ],
+   "male_head": [
+    "shades"
+   ],
+   "female_head": [
+    "shades"
+   ]
+  },
+  "tennis": {
+   "light": "warm",
+   "front": [
+    "tennis-ball-wide"
+   ],
+   "male_props": [
+    "racket:outer"
+   ],
+   "female_props": [
+    "racket:outer"
+   ]
+  },
+  "stargaze": {
+   "back": [
+    "night-sky-wide"
+   ],
+   "male_props": [
+    "lantern:outer"
+   ]
+  },
+  "fog-lantern": {
+   "front": [
+    "fog-wide"
+   ],
+   "male_props": [
+    "lantern:outer"
+   ]
+  },
+  "hide-thunder": {
+   "back": [
+    "storm-wide"
+   ],
+   "front": [
+    "rain"
+   ]
+  },
+  "fireworks": {
+   "back": [],
+   "fireworks": true
+  }
+ }
+}

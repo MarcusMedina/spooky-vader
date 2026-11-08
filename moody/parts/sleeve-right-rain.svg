@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Yellow sleeve, right</title>
+<defs><linearGradient id="srr-y" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE580"/><stop offset=".5" stop-color="#F2C230"/><stop offset="1" stop-color="#B98A12"/></linearGradient></defs>
+<path d="M 532 442 Q 616 514 592 584" fill="none" stroke="#6B4E08" stroke-width="92" stroke-linecap="round"/>
+<path d="M 532 442 Q 616 514 592 584" fill="none" stroke="url(#srr-y)" stroke-width="80" stroke-linecap="round"/>
+<path d="M 552 430 Q 628 496 614 546" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".4"/>
+<path d="M 548 566 L 640 592" stroke="#6B4E08" stroke-width="30" stroke-linecap="butt"/><path d="M 548 566 L 640 592" stroke="#D9A619" stroke-width="20" stroke-linecap="butt"/>
+<path d="M 552 558 L 636 582" stroke="#C9C9C9" stroke-width="6" opacity=".85" fill="none"/>
+</svg>

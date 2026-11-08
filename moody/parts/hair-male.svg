@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Messy dark hair</title>
+<defs><linearGradient id="hair-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4A3426"/><stop offset=".5" stop-color="#2A1D14"/><stop offset="1" stop-color="#140E0A"/></linearGradient></defs>
+<path d="M 302 292 C 276 240 282 200 318 194 C 326 164 366 152 388 172 C 402 140 450 140 462 170 C 488 154 530 168 526 202 C 560 204 572 250 548 292 C 530 264 500 252 470 252 C 450 246 400 246 372 254 C 342 254 318 268 302 292 Z" fill="url(#hair-g)" stroke="#0E0906" stroke-width="3.5" stroke-linejoin="round"/>
+<g fill="none" stroke="#6B4E38" stroke-width="3" stroke-linecap="round" opacity=".65"><path d="M 322 214 Q 340 190 366 186"/><path d="M 398 168 Q 420 156 446 164"/><path d="M 470 188 Q 494 176 514 196"/><path d="M 316 250 Q 322 230 336 222"/><path d="M 540 250 Q 536 232 524 222"/></g>
+</svg>

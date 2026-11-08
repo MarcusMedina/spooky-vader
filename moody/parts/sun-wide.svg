@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Big summer sun</title>
+<defs><radialGradient id="sunwide-g" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF4B0"/><stop offset=".35" stop-color="#FFD84A"/><stop offset="1" stop-color="#FFB32B" stop-opacity="0"/></radialGradient></defs>
+<circle cx="900" cy="120" r="170" fill="url(#sunwide-g)"/><circle cx="900" cy="120" r="58" fill="#FFE066" stroke="#E8A417" stroke-width="5"/>
+<g stroke="#FFD04A" stroke-width="9" stroke-linecap="round"><path d="M 900 28 v -22 M 900 212 v 22 M 808 120 h -22 M 992 120 h 22 M 834 54 l -16 -16 M 966 186 l 16 16 M 966 54 l 16 -16 M 834 186 l -16 16"/></g>
+</svg>

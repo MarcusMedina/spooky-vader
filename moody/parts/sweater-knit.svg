@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Big knitted Nordic sweater</title>
+<defs><linearGradient id="swe-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5533D"/><stop offset="1" stop-color="#A12A1E"/></linearGradient>
+<pattern id="swe-k" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M 0 14 L 7 0 L 14 14" fill="none" stroke="#7a1d14" stroke-width="2" opacity=".35"/></pattern>
+<clipPath id="swe-c"><path d="M 264 462 Q 420 392 576 462 L 600 604 L 608 724 Q 420 762 232 724 L 240 604 Z"/></clipPath></defs>
+<path d="M 264 462 Q 420 392 576 462 L 600 604 L 608 724 Q 420 762 232 724 L 240 604 Z" fill="url(#swe-b)" stroke="#5E160E" stroke-width="6" stroke-linejoin="round"/>
+<g clip-path="url(#swe-c)"><rect x="220" y="380" width="400" height="400" fill="url(#swe-k)"/>
+<g fill="#F7ECD2" stroke="#5E160E" stroke-width="1.5"><path d="M 240 560 h 360 v 34 h -360 z" fill="#2E3E73"/>
+<g id="swe-star"><path d="M 0 -11 L 3 -3 L 11 0 L 3 3 L 0 11 L -3 3 L -11 0 L -3 -3 Z"/></g></g>
+<use href="#swe-star" x="262" y="577" fill="#F7ECD2"/><use href="#swe-star" x="312" y="577" fill="#F7ECD2"/><use href="#swe-star" x="362" y="577" fill="#F7ECD2"/><use href="#swe-star" x="412" y="577" fill="#F7ECD2"/><use href="#swe-star" x="462" y="577" fill="#F7ECD2"/><use href="#swe-star" x="512" y="577" fill="#F7ECD2"/><use href="#swe-star" x="562" y="577" fill="#F7ECD2"/>
+<path d="M 240 556 h 360 M 240 598 h 360" stroke="#F7ECD2" stroke-width="4"/></g>
+<path d="M 300 440 Q 420 506 540 440 L 540 470 Q 420 540 300 470 Z" fill="#C73E2B" stroke="#5E160E" stroke-width="5" stroke-linejoin="round"/>
+<path d="M 236 716 Q 420 756 606 716" fill="none" stroke="#7a1d14" stroke-width="22" stroke-linecap="round"/><path d="M 244 716 Q 420 754 598 716" fill="none" stroke="#E5533D" stroke-width="8" stroke-dasharray="6 5" stroke-linecap="round"/>
+</svg>

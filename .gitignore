@@ -1,0 +1,9 @@
+*.png
+node_modules/
+/dist/
+chibi/
+art/
+rules/
+moody/dist/
+moody/build-duo.py
+dolls/dist-shop/

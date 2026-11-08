@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Wind streaks and flying leaves</title>
+<g fill="none" stroke="#DCE6E0" stroke-width="5" stroke-linecap="round" opacity=".6"><path d="M 20 200 q 120 -30 240 0 t 120 -10"/><path d="M 700 140 q 120 -30 240 0 t 90 -8"/><path d="M 40 520 q 100 -26 200 0 t 120 -8"/><path d="M 760 480 q 100 -26 200 0 t 80 -8"/><path d="M 200 360 q 80 -20 160 0"/></g>
+<g stroke="#2e3c1a" stroke-width="2"><path d="M 300 300 q 20 -20 36 0 q -16 20 -36 0 Z" fill="#9BC53D"/><path d="M 860 330 q 20 -20 36 0 q -16 20 -36 0 Z" fill="#E8A53A"/><path d="M 120 420 q 20 -20 36 0 q -16 20 -36 0 Z" fill="#D9602A"/><path d="M 640 260 q 20 -20 36 0 q -16 20 -36 0 Z" fill="#9BC53D"/></g>
+</svg>
