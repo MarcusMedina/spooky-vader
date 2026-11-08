@@ -1,0 +1,11 @@
+{
+  "name": "vadertroll",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 scripts/build-dolls.py && node scripts/build-site.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "test": "node --test weather/test/weather.test.mjs",
+    "build:dolls": "python3 scripts/build-dolls.py"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Knit sleeve right</title>
+<defs><linearGradient id="skright-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5533D"/><stop offset="1" stop-color="#A12A1E"/></linearGradient></defs>
+<path d="M 532 442 Q 616 514 592 584" fill="none" stroke="#5E160E" stroke-width="92" stroke-linecap="round"/><path d="M 532 442 Q 616 514 592 584" fill="none" stroke="url(#skright-b)" stroke-width="80" stroke-linecap="round"/>
+<path d="M 532 442 Q 616 514 592 584" fill="none" stroke="#7a1d14" stroke-width="80" stroke-linecap="round" stroke-dasharray="3 11" opacity=".3"/>
+<path d="M 548 566 L 640 592" stroke="#5E160E" stroke-width="32"/><path d="M 548 566 L 640 592" stroke="#F7ECD2" stroke-width="22" stroke-dasharray="5 4"/>
+</svg>

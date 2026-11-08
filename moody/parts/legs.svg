@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Legs and feet</title>
+<defs><linearGradient id="legs-skin" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:var(--skin-hi,#7c946b)"/><stop offset="45%" style="stop-color:var(--skin,#556c47)"/><stop offset="100%" style="stop-color:var(--skin-lo,#34422b)"/></linearGradient></defs>
+<g id="legs-legs-group">
+      
+      <g id="legs-left-leg-group" transform-origin="330 580">
+        <path d="M 330 580 L 310 740 L 245 770" stroke="url(#legs-skin)" stroke-width="75" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <path d="M 270 770 C 245 770 195 785 205 810 C 215 830 280 820 305 795 Z" style="fill:var(--skin-lo,#34422b)" />
+        <circle cx="210" cy="803" r="11" style="fill:var(--skin-finger,#4d643e)" />
+        <circle cx="233" cy="812" r="10" style="fill:var(--skin-finger,#4d643e)" />
+        <circle cx="258" cy="813" r="9" style="fill:var(--skin-finger,#4d643e)" />
+      </g>
+
+      
+      <g id="legs-right-leg-group" transform-origin="510 580">
+        <path d="M 510 580 L 530 740 L 595 770" stroke="url(#legs-skin)" stroke-width="75" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <path d="M 570 770 C 595 770 645 785 635 810 C 625 830 560 820 535 795 Z" style="fill:var(--skin-lo,#34422b)" />
+        <circle cx="630" cy="803" r="11" style="fill:var(--skin-finger,#4d643e)" />
+        <circle cx="607" cy="812" r="10" style="fill:var(--skin-finger,#4d643e)" />
+        <circle cx="582" cy="813" r="9" style="fill:var(--skin-finger,#4d643e)" />
+      </g>
+    </g>
+
+    
+    
+</svg>

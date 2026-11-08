@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Tail</title>
+<g id="tail-tail-group" transform-origin="290 620">
+      <path d="M 290 620 Q 190 670 150 780 Q 130 830 80 815" stroke-width="36" stroke-linecap="round" fill="none" style="stroke:var(--skin-lo,#34422b)" />
+      <path d="M 100 835 C 70 855 45 820 65 800 C 75 785 105 805 100 835 Z" fill="#241912" />
+      <path d="M 85 830 C 65 840 55 815 70 800" fill="#3d2c20" />
+    </g>
+
+    
+    
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Blue rubber boots</title>
+<defs><linearGradient id="boots-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6AA6EA"/><stop offset=".55" stop-color="#2F62A8"/><stop offset="1" stop-color="#1D3F73"/></linearGradient>
+<g id="boots-boot"><path d="M 288 726 L 360 726 L 352 786 Q 350 808 312 814 Q 262 842 202 826 Q 178 806 206 784 Q 252 770 288 762 Z" fill="url(#boots-b)" stroke="#142B52" stroke-width="5" stroke-linejoin="round"/><path d="M 192 818 Q 250 846 318 810 L 316 822 Q 254 858 196 832 Z" fill="#1A1A1A"/><path d="M 304 738 Q 300 770 292 790" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".4"/><path d="M 288 730 L 360 730" stroke="#142B52" stroke-width="5"/></g></defs>
+<use href="#boots-boot"/><use href="#boots-boot" transform="translate(840 0) scale(-1 1)"/>
+</svg>

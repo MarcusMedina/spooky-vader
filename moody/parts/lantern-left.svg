@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Lantern hanging from left hand</title>
+<defs><radialGradient id="lanternl-g" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE9A0" stop-opacity=".9"/><stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/></radialGradient>
+<linearGradient id="lanternl-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3B8"/><stop offset="1" stop-color="#F2A93B"/></linearGradient></defs>
+<circle cx="124" cy="690" r="120" fill="url(#lanternl-g)"/>
+<path d="M 140 590 Q 150 620 124 640" fill="none" stroke="#2a2a2a" stroke-width="5" stroke-linecap="round"/>
+<rect x="98" y="640" width="52" height="64" rx="8" fill="url(#lanternl-b)" stroke="#2a2a2a" stroke-width="5"/>
+<path d="M 98 640 L 124 622 L 150 640 M 98 704 H 150 M 124 640 V 704" fill="none" stroke="#2a2a2a" stroke-width="4" stroke-linejoin="round"/>
+<path d="M 92 704 H 156 V 714 H 92 Z" fill="#2a2a2a"/>
+</svg>

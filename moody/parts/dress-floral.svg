@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Floral summer dress</title>
+<defs><linearGradient id="dress-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7C8D8"/><stop offset="1" stop-color="#D98AA8"/></linearGradient>
+<g id="dress-f"><g fill="#fff"><circle cx="0" cy="-7" r="5.5"/><circle cx="7" cy="-2" r="5.5"/><circle cx="4" cy="6" r="5.5"/><circle cx="-4" cy="6" r="5.5"/><circle cx="-7" cy="-2" r="5.5"/></g><circle r="3.5" fill="#F2B632"/></g>
+<g id="dress-f2"><g fill="#B58CE0"><circle cx="0" cy="-6" r="4.5"/><circle cx="6" cy="-1" r="4.5"/><circle cx="3.5" cy="5" r="4.5"/><circle cx="-3.5" cy="5" r="4.5"/><circle cx="-6" cy="-1" r="4.5"/></g><circle r="3" fill="#fff"/></g>
+<clipPath id="dress-c"><path d="M 292 462 Q 420 402 548 462 L 562 566 Q 604 690 624 726 Q 420 770 216 726 Q 236 690 278 566 Z"/></clipPath></defs>
+<path d="M 292 462 Q 420 402 548 462 L 562 566 Q 604 690 624 726 Q 420 770 216 726 Q 236 690 278 566 Z" fill="url(#dress-b)" stroke="#6E2E48" stroke-width="5" stroke-linejoin="round"/>
+<g clip-path="url(#dress-c)">
+<use href="#dress-f" x="320" y="490"/><use href="#dress-f" x="490" y="500"/><use href="#dress-f" x="410" y="560"/><use href="#dress-f" x="300" y="620"/><use href="#dress-f" x="520" y="630"/><use href="#dress-f" x="420" y="680"/><use href="#dress-f" x="260" y="700"/><use href="#dress-f" x="580" y="704"/>
+<use href="#dress-f2" x="365" y="520"/><use href="#dress-f2" x="462" y="528"/><use href="#dress-f2" x="350" y="660"/><use href="#dress-f2" x="480" y="650"/><use href="#dress-f2" x="420" y="735"/><use href="#dress-f2" x="300" y="560"/><use href="#dress-f2" x="545" y="570"/></g>
+<path d="M 232 722 Q 420 762 610 722" fill="none" stroke="#8A3A5C" stroke-width="7" stroke-dasharray="14 8"/>
+<path d="M 292 462 Q 420 402 548 462" fill="none" stroke="#6E2E48" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Beach towel</title>
+<defs><pattern id="towelwide-p" width="60" height="400" patternUnits="userSpaceOnUse"><rect width="30" height="400" fill="#E8584A"/><rect x="30" width="30" height="400" fill="#F7F0E0"/></pattern></defs>
+<path d="M 110 806 L 940 806 L 1030 880 L 20 880 Z" fill="url(#towelwide-p)" stroke="#5a1f18" stroke-width="4" stroke-linejoin="round"/>
+</svg>

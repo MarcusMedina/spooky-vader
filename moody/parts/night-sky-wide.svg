@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Night sky with moon and stars</title>
+<defs><radialGradient id="nightsky-m" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#FFFDF0"/><stop offset="1" stop-color="#D5D2B8"/></radialGradient></defs>
+<circle cx="170" cy="130" r="48" fill="url(#nightsky-m)"/><circle cx="188" cy="118" r="42" fill="#0c130d" opacity=".0"/>
+<g fill="#fff"><circle cx="300" cy="60" r="3"/><circle cx="420" cy="120" r="2.5"/><circle cx="560" cy="50" r="3.5"/><circle cx="700" cy="110" r="2.5"/><circle cx="820" cy="60" r="3"/><circle cx="950" cy="150" r="3"/><circle cx="80" cy="260" r="2.5"/><circle cx="1000" cy="300" r="2.5"/><circle cx="250" cy="200" r="2"/><circle cx="640" cy="190" r="2"/><circle cx="880" cy="240" r="2"/><circle cx="500" cy="170" r="2"/><circle cx="360" cy="30" r="2"/><circle cx="760" cy="30" r="2"/></g>
+<g stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"><path d="M 560 40 v 20 M 550 50 h 20 M 950 140 v 20 M 940 150 h 20"/></g>
+</svg>

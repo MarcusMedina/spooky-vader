@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Brows</title>
+<g id="brows-eyebrows-group">
+        <path d="M 330 270 Q 380 255 410 285" stroke="#1d150f" stroke-width="20" stroke-linecap="round" fill="none" />
+        <path d="M 510 270 Q 460 255 430 285" stroke="#1d150f" stroke-width="20" stroke-linecap="round" fill="none" />
+        <path d="M 325 265 Q 375 245 405 280" stroke="#52701e" stroke-width="9" stroke-linecap="round" fill="none" />
+        <path d="M 515 265 Q 465 245 435 280" stroke="#52701e" stroke-width="9" stroke-linecap="round" fill="none" />
+      </g>
+
+      
+      
+</svg>

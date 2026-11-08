@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Eyes (open and closed groups)</title>
+<defs><radialGradient id="eyes-eye" cx="40%" cy="40%" r="60%"><stop offset="0%" style="stop-color:var(--eye-hi,#ffde59)"/><stop offset="75%" style="stop-color:var(--eye,#e65c00)"/><stop offset="100%" style="stop-color:var(--eye-lo,#661100)"/></radialGradient></defs>
+<g id="eyes-eyes-group">
+        
+        <g id="eyes-eyes-open">
+          <ellipse cx="370" cy="300" rx="22" ry="18" fill="#141414" />
+          <ellipse cx="370" cy="300" rx="19" ry="15" fill="url(#eyes-eye)" />
+          <circle cx="370" cy="300" r="7" fill="#000000" />
+          <circle cx="376" cy="295" r="4.5" fill="#ffffff" />
+
+          <ellipse cx="470" cy="300" rx="22" ry="18" fill="#141414" />
+          <ellipse cx="470" cy="300" rx="19" ry="15" fill="url(#eyes-eye)" />
+          <circle cx="470" cy="300" r="7" fill="#000000" />
+          <circle cx="476" cy="295" r="4.5" fill="#ffffff" />
+        </g>
+        
+        
+        <g id="eyes-eyes-closed" display="none">
+          <path d="M 345 300 Q 370 315 395 300" stroke="#141414" stroke-width="5" stroke-linecap="round" fill="none" />
+          <path d="M 445 300 Q 470 315 495 300" stroke="#141414" stroke-width="5" stroke-linecap="round" fill="none" />
+        </g>
+      </g>
+
+      
+      
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Right arm (bare)</title>
+<defs><linearGradient id="arm-right-skin" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:var(--skin-hi,#7c946b)"/><stop offset="45%" style="stop-color:var(--skin,#556c47)"/><stop offset="100%" style="stop-color:var(--skin-lo,#34422b)"/></linearGradient><linearGradient id="arm-right-skinhl" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:var(--skin-hl,#9cb888)" stop-opacity="0.8"/><stop offset="100%" style="stop-color:var(--skin,#556c47)" stop-opacity="0"/></linearGradient></defs>
+<path d="M 530 440 Q 610 510 585 600" stroke="url(#arm-right-skin)" stroke-width="65" stroke-linecap="round" fill="none" />
+      
+<path d="M 545 450 Q 615 515 595 590" stroke="url(#arm-right-skinhl)" stroke-width="25" stroke-linecap="round" fill="none" opacity="0.4" />
+      
+
+</svg>

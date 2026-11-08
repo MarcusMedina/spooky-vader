@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 900" width="1050" height="900">
+<title>Storm clouds and lightning</title>
+<defs><linearGradient id="stormwide-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4552"/><stop offset="1" stop-color="#1c232c"/></linearGradient></defs>
+<g fill="url(#stormwide-c)"><ellipse cx="200" cy="70" rx="200" ry="70"/><ellipse cx="480" cy="40" rx="230" ry="66"/><ellipse cx="800" cy="70" rx="230" ry="76"/><ellipse cx="1000" cy="40" rx="140" ry="60"/><ellipse cx="340" cy="120" rx="160" ry="50"/><ellipse cx="660" cy="116" rx="180" ry="50"/></g>
+<path d="M 560 120 L 508 250 L 556 250 L 500 400 L 616 214 L 566 214 L 612 120 Z" fill="#FFF3A0" stroke="#F2C230" stroke-width="5" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Skis</title>
+<defs><linearGradient id="skis-b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2E6BC0"/><stop offset="1" stop-color="#d94a3d"/></linearGradient></defs>
+<g stroke="#101010" stroke-width="4" stroke-linejoin="round" fill="url(#skis-b)">
+<path d="M 100 838 L 360 838 Q 392 838 402 818 Q 380 826 360 826 L 100 826 Z"/>
+<path d="M 468 838 L 690 838 Q 722 838 732 818 Q 710 826 690 826 L 468 826 Z"/></g>
+<g fill="#222"><rect x="236" y="814" width="52" height="14" rx="4"/><rect x="580" y="814" width="52" height="14" rx="4"/></g>
+</svg>

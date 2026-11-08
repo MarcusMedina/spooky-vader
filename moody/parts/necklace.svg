@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Rowan berry and wooden tooth necklace</title>
+<path d="M 330 452 Q 420 520 510 452" fill="none" stroke="#5a3d22" stroke-width="4"/>
+<g stroke="#5a1410" stroke-width="2"><circle cx="344" cy="470" r="8" fill="#D9382A"/><circle cx="368" cy="490" r="8" fill="#D9382A"/><circle cx="472" cy="490" r="8" fill="#D9382A"/><circle cx="496" cy="470" r="8" fill="#D9382A"/>
+<circle cx="396" cy="504" r="8" fill="#D9382A"/><circle cx="444" cy="504" r="8" fill="#D9382A"/></g>
+<path d="M 420 506 L 410 540 Q 420 548 430 540 Z" fill="#F2E8C8" stroke="#6b5a32" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 382 498 l -5 22 l 10 -3 z M 458 498 l 5 22 l -10 -3 z" fill="#C9B88A" stroke="#6b5a32" stroke-width="2"/>
+</svg>

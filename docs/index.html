@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spooky väder</title>
+<meta name="description" content="Två små grå gubbar under en UFO som klär sig och gör något passande efter dagens väder i Sverige.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Spooky väder</h1>
+    <div class="place">
+      <label for="city">Plats</label>
+      <select id="city"></select>
+      <button type="button" id="geo">Min plats</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="stage" aria-live="polite">
+      <div class="frame"><img id="scene" alt="" width="1090" height="900"></div>
+      <div class="caption">
+        <h2 id="act">Laddar vädret…</h2>
+        <p id="line"></p>
+        <p class="pills" id="pills"></p>
+      </div>
+    </section>
+
+    <section aria-label="Kommande timmar">
+      <h3>Kommande dygnet</h3>
+      <div class="timeline" id="timeline" role="group" aria-label="Välj tid"></div>
+    </section>
+
+    <details class="card" id="manual">
+      <summary>Testa eget väder</summary>
+      <div class="manual-grid">
+        <div><div class="lbl"><label for="t">Temperatur</label><output id="tOut"></output></div><input id="t" type="range" min="-25" max="35" step="1" value="0"></div>
+        <div><div class="lbl"><label for="w">Vind</label><output id="wOut"></output></div><input id="w" type="range" min="0" max="25" step="0.5" value="1"></div>
+        <div><div class="lbl" id="pL">Nederbörd</div><div class="seg" id="precip" role="group" aria-labelledby="pL"></div></div>
+        <div><div class="lbl" id="sL">Himmel</div><div class="seg" id="sky" role="group" aria-labelledby="sL"></div></div>
+        <div><div class="lbl" id="dL">Tid på dygnet</div><div class="seg" id="day" role="group" aria-labelledby="dL"></div></div>
+      </div>
+    </details>
+    <p class="status" id="status" role="status"></p>
+  </main>
+
+  <footer>
+    <p>Väderdata från <a href="https://opendata.smhi.se/">SMHI:s öppna data</a>. Din webbläsare hämtar prognosen direkt från SMHI. Sidan har inga cookies, ingen statistik och sparar bara vilken plats du valde i din egen webbläsare. "Min plats" används en gång och skickas bara som koordinater till SMHI.</p>
+  </footer>
+</div>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>

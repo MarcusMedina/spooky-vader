@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900">
+<title>Skull and jaw</title>
+<defs><linearGradient id="skull-skin" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:var(--skin-hi,#7c946b)"/><stop offset="45%" style="stop-color:var(--skin,#556c47)"/><stop offset="100%" style="stop-color:var(--skin-lo,#34422b)"/></linearGradient></defs>
+<g id="skull-skull-base">
+        <ellipse cx="420" cy="320" rx="130" ry="115" fill="url(#skull-skin)" />
+        <path d="M 300 330 C 295 420 345 460 420 460 C 495 460 545 420 540 330 Z" fill="url(#skull-skin)" />
+      </g>
+
+      
+      
+</svg>

@@ -1,0 +1,198 @@
+{
+  "outfits": {
+    "rain": {
+      "art": "ready"
+    },
+    "cold": {
+      "art": "ready"
+    },
+    "summer": {
+      "art": "ready"
+    },
+    "mild": {
+      "art": "ready"
+    }
+  },
+  "outfitByTemp": {
+    "freezing": "cold",
+    "cold": "cold",
+    "cool": "mild",
+    "mild": "mild",
+    "warm": "summer",
+    "hot": "summer"
+  },
+  "activities": {
+    "hide-thunder": "ready",
+    "stargaze": "ready",
+    "hold-hats": "ready",
+    "ski": "ready",
+    "snowball": "ready",
+    "dance-in-rain": "ready",
+    "puddle-walk": "ready",
+    "umbrella-sleet": "ready",
+    "sunbathe": "ready",
+    "tennis": "ready",
+    "stroll": "ready",
+    "fog-lantern": "ready",
+    "fireworks": "ready"
+  },
+  "rules": [
+    {
+      "id": "thunder",
+      "when": {
+        "precip": [
+          "thunder"
+        ]
+      },
+      "activity": "hide-thunder",
+      "outfit": "rain"
+    },
+    {
+      "id": "storm",
+      "when": {
+        "wind": [
+          "storm"
+        ]
+      },
+      "activity": "hold-hats",
+      "outfit": "auto"
+    },
+    {
+      "id": "snow-calm-ski",
+      "when": {
+        "precip": [
+          "snow"
+        ],
+        "wind": [
+          "calm"
+        ]
+      },
+      "activity": "ski",
+      "outfit": "cold"
+    },
+    {
+      "id": "snow-fight",
+      "when": {
+        "precip": [
+          "snow"
+        ],
+        "wind": [
+          "breezy"
+        ]
+      },
+      "activity": "snowball",
+      "outfit": "cold"
+    },
+    {
+      "id": "snow-windy",
+      "when": {
+        "precip": [
+          "snow"
+        ]
+      },
+      "activity": "hold-hats",
+      "outfit": "cold"
+    },
+    {
+      "id": "sleet",
+      "when": {
+        "precip": [
+          "sleet"
+        ]
+      },
+      "activity": "umbrella-sleet",
+      "outfit": "rain"
+    },
+    {
+      "id": "warm-rain",
+      "when": {
+        "precip": [
+          "rain"
+        ],
+        "tempBand": [
+          "warm",
+          "hot"
+        ]
+      },
+      "activity": "dance-in-rain",
+      "outfit": "summer"
+    },
+    {
+      "id": "rain",
+      "when": {
+        "precip": [
+          "rain"
+        ]
+      },
+      "activity": "puddle-walk",
+      "outfit": "rain"
+    },
+    {
+      "id": "night",
+      "when": {
+        "daylight": [
+          "night"
+        ]
+      },
+      "activity": "stargaze",
+      "outfit": "auto"
+    },
+    {
+      "id": "fog",
+      "when": {
+        "sky": [
+          "fog"
+        ]
+      },
+      "activity": "fog-lantern",
+      "outfit": "auto"
+    },
+    {
+      "id": "sunbathe",
+      "when": {
+        "tempBand": [
+          "warm",
+          "hot"
+        ],
+        "wind": [
+          "calm"
+        ],
+        "sky": [
+          "sunny"
+        ]
+      },
+      "activity": "sunbathe",
+      "outfit": "summer"
+    },
+    {
+      "id": "tennis",
+      "when": {
+        "tempBand": [
+          "mild",
+          "warm"
+        ],
+        "wind": [
+          "calm"
+        ]
+      },
+      "activity": "tennis",
+      "outfit": "auto"
+    },
+    {
+      "id": "fallback",
+      "when": {},
+      "activity": "stroll",
+      "outfit": "auto"
+    }
+  ],
+  "seasons": {
+    "xmas": {
+      "from": "12-01 00:00",
+      "to": "12-24 23:59"
+    },
+    "fireworks": {
+      "from": "12-31 23:30",
+      "to": "01-01 01:30"
+    }
+  }
+}

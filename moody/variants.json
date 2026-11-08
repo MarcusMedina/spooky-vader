@@ -1,0 +1,13 @@
+{
+ "default": {},
+ "blue": {
+  "skin-hi": "#6fa596",
+  "skin": "#4b7f74",
+  "skin-lo": "#2c4d47",
+  "skin-hl": "#98cbbd",
+  "skin-hand": "#3d6c62",
+  "skin-finger": "#44766b",
+  "skin-dd": "#223c37",
+  "skin-ear": "#2a4a44"
+ }
+}
