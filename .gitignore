@@ -1,4 +1,6 @@
 *.png
+!site/icons/*.png
+!docs/icons/*.png
 node_modules/
 /dist/
 chibi/

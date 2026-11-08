@@ -119,3 +119,10 @@ $("w").oninput = (e) => { S.w = +e.target.value; manualRender(); };
 $("manual").addEventListener("toggle", () => { if ($("manual").open) manualRender(); else if (forecast) load(); });
 
 useCity();
+
+// ---- install (PWA) -------------------------------------------------------
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch((e) => console.warn("sw", e));
+let installEvt = null;
+addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); installEvt = e; $("install").hidden = false; });
+addEventListener("appinstalled", () => { installEvt = null; $("install").hidden = true; });
+$("install").onclick = async () => { if (!installEvt) return; installEvt.prompt(); await installEvt.userChoice.catch(() => {}); installEvt = null; $("install").hidden = true; };

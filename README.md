@@ -43,3 +43,6 @@ Varje scen byggs som flera filer: `<scen>.svg` (helbild, används av tester) och
 
 ## Klicka på gubbarna
 `site/scare.mjs`: klicka på en gubbe så springer just den åt sin sida (mannen åt vänster, kvinnan åt höger). Efter 15 sekunder beamas den tillbaka av UFO:n. De är oberoende av varandra. Fungerar även med tangentbord (Enter/mellanslag på scenen) och utan rörelse vid `prefers-reduced-motion`.
+
+## Installera (PWA)
+Sajten är en installerbar app: `site/manifest.webmanifest`, ikoner i `site/icons/` och en service worker (`site/sw.js`) som sparar appens filer för offline-start. Cache-namnet är en hash av hela bygget (`build-site.mjs`), så varje ny version tömmer den gamla cachen. Appfiler hämtas nätverk först, scenlager cache först. SMHI-anrop går alltid direkt mot SMHI och cachas inte. På Android/Chrome visas en "Installera"-knapp; på iPhone: Dela → Lägg till på hemskärmen.

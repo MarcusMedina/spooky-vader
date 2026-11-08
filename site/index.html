@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Spooky väder</title>
 <meta name="description" content="Två små grå gubbar under en UFO som klär sig och gör något passande efter dagens väder i Sverige.">
+<meta name="theme-color" content="#0d1710">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,6 +19,7 @@
       <label for="city">Plats</label>
       <select id="city"></select>
       <button type="button" id="geo">Min plats</button>
+      <button type="button" id="install" hidden>Installera</button>
     </div>
   </header>
 
@@ -48,6 +53,7 @@
 
   <footer>
     <p>Väderdata från <a href="https://opendata.smhi.se/">SMHI:s öppna data</a>. Din webbläsare hämtar prognosen direkt från SMHI. Sidan har inga cookies, ingen statistik och sparar bara vilken plats du valde i din egen webbläsare. "Min plats" används en gång och skickas bara som koordinater till SMHI.</p>
+    <p>Appen kan installeras och sparar då sina egna filer i din webbläsare så att den startar även utan nät. Android/Chrome: knappen "Installera". iPhone: Dela → Lägg till på hemskärmen.</p>
   </footer>
 </div>
 <script type="module" src="app.mjs"></script>
