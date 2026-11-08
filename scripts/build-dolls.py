@@ -367,6 +367,8 @@ def build(activity, outfit, xmas=False, precip=""):
            f'<rect width="{W}" height="{H}" fill="url(#vig)"/><rect x="12" y="12" width="{W-24}" height="{H-24}" fill="none" stroke="#2c3a37" stroke-width="10"/></svg>')
     return svg
 
+LAYERS = {}
+
 def alien_scene(a, outfit, figs, defs, tint, beam):
     for o, n in (('#eef3ea','#cfdad3'),('#d3d9cb','#a8b8b0'),('#8c978c','#5d6f67'),('#f4f8ee','#d7e2db'),('#7f8a7f','#52625b')): defs = defs.replace(o, n)
     sky = "".join(sky_part(n) for n in a.get("back", [])) + (fireworks_svg() if a.get("fireworks") else "")
@@ -383,8 +385,11 @@ def alien_scene(a, outfit, figs, defs, tint, beam):
             '<linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16301f"/><stop offset="1" stop-color="#07120c"/></linearGradient></defs>')
     hills = f'<path d="M 0 {GROUND-30} Q 200 {GROUND-110} 420 {GROUND-50} Q 650 {GROUND-130} 860 {GROUND-60} Q 980 {GROUND-100} 1090 {GROUND-40} L 1090 {GROUND} L 0 {GROUND} Z" fill="#0b1a14"/>'
     field = f'<rect y="{GROUND}" width="{W}" height="{H-GROUND}" fill="url(#field)"/><g stroke="#2b4d37" stroke-width="2" opacity=".6"><path d="M 0 860 H 1090 M 0 880 H 1090"/></g>'
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">{defs}{grad}<rect width="{W}" height="{H}" fill="url(#nsky)"/>{stars}{sky}{hills}{ufo}{field}{back}{floorprops}'
-           f'{figs}{front}<rect width="{W}" height="{H}" fill="url(#vig)"/></svg>')
+    head = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">{defs}{grad}'
+    bg = f'<rect width="{W}" height="{H}" fill="url(#nsky)"/>{stars}{sky}{hills}{ufo}'
+    fg = f'{field}{back}{floorprops}{figs}{front}<rect width="{W}" height="{H}" fill="url(#vig)"/>'
+    LAYERS.clear(); LAYERS.update(bg=head + bg + "</svg>", fg=head + fg + "</svg>")  # page stacks: bg, moon, clouds, fg
+    svg = head + bg + fg + "</svg>"
     return svg
 
 if __name__ == "__main__":
@@ -398,5 +403,10 @@ if __name__ == "__main__":
         if dup: sys.exit(f"duplicate ids in {act}--{outfit}: {dup[:5]}")
         sfx = "--xmas" if xmas else (f"--{precip}" if precip else "")
         f = out / f"{act}--{outfit}{sfx}.svg"; f.write_text(svg)
+        if STYLE == "alien":
+            for layer in ("bg", "fg"):
+                ids = re.findall(r'\bid="([^"]+)"', LAYERS[layer])
+                if len(ids) != len(set(ids)): sys.exit(f"duplicate ids in {f.stem}.{layer}")
+                (out / f"{f.stem}.{layer}.svg").write_text(LAYERS[layer])
         if png: subprocess.run(["rsvg-convert", "-o", str(f.with_suffix(".png")), str(f)], check=True)
         print("built", f.name, len(svg)//1024, "KB")

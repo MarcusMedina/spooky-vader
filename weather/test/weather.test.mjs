@@ -74,7 +74,7 @@ test("every reachable (activity, outfit) has a built duo scene file", () => {
     const s = pickScene(c);
     assert.equal(config.outfits[s.outfit].art, "ready", s.outfit);
     assert.equal(config.activities[s.activity], "ready", s.activity);
-    assert.ok(existsSync(new URL(`../../dolls/dist/${s.scene}.svg`, import.meta.url)), s.scene);
+    for (const ext of ["svg", "bg.svg", "fg.svg"]) assert.ok(existsSync(new URL(`../../dolls/dist/${s.scene}.${ext}`, import.meta.url)), `${s.scene}.${ext}`);
   }
 });
 test("SNOW1g parsing ignores 9999 and handles percent cloud cover", async () => {
@@ -144,4 +144,11 @@ test("moon phase matches known new/full moons (within a day)", () => {
 });
 test("moon svg renders for a whole month without errors", () => {
   for (let d = 0; d < 30; d++) assert.match(moonSvg(new Date(Date.UTC(2026, 10, 1 + d))), /^<svg[\s\S]*<\/svg>$/);
+});
+
+import { cloudsSvg } from "../clouds.mjs";
+test("clouds: none for sunny/fog, more for cloudy than partly", () => {
+  assert.equal(cloudsSvg("sunny"), ""); assert.equal(cloudsSvg("fog"), "");
+  const n = (x) => (cloudsSvg(x).match(/class="cl"/g) ?? []).length;
+  assert.ok(n("partly") > 0 && n("cloudy") > n("partly"));
 });

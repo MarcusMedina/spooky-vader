@@ -1,6 +1,7 @@
 import { classify, tempBand, windClass } from "./classify.mjs";
 import { pickScene } from "./scene.mjs";
 import { moonSvg, moonPhase } from "./moon.mjs";
+import { cloudsSvg } from "./clouds.mjs";
 import { fetchForecast, upcoming, classifyEntry } from "./smhi.mjs";
 
 const [rules, texts] = await Promise.all(["rules.json", "texts.sv.json"].map((f) => fetch(f).then((r) => r.json())));
@@ -28,10 +29,12 @@ const fmtT = (t) => `${Math.round(t)}°`;
 
 function show(c, extra = {}) {
   const p = pickScene(c, rules, extra.when ?? clock()), tx = texts.activities[p.activity];
-  const img = $("scene");
-  img.classList.add("swap");
-  img.onload = () => img.classList.remove("swap");
-  img.src = `scenes/${p.scene}.svg`;
+  const img = $("scene"), bg = $("sceneBg");
+  img.classList.add("swap"); bg.classList.add("swap");
+  img.onload = () => img.classList.remove("swap"); bg.onload = () => bg.classList.remove("swap");
+  bg.src = `scenes/${p.scene}.bg.svg`;
+  img.src = `scenes/${p.scene}.fg.svg`;
+  $("clouds").innerHTML = p.activity === "hide-thunder" ? "" : cloudsSvg(c.sky); // thunder scenes bring their own storm clouds
   img.alt = `${tx.label}, ${texts.outfits[p.outfit].toLowerCase()}`;
   const when = extra.when ?? clock(), moon = $("moon");
   moon.hidden = ["sunbathe", "fireworks"].includes(p.activity); // sun / fireworks own that part of the sky

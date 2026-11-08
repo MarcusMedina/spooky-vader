@@ -37,3 +37,6 @@ Gubbarna gungar på huvudet ibland (CSS i varje SVG, ingen JavaScript). Mannen v
 
 ## Månen
 `weather/moon.mjs` räknar ut månfasen ur datumet (ingen nätverksanrop, ungefär ±½ dygn) och sajten ritar månen med rätt fas ovanpå scenen uppe till vänster. Den göms vid solbad (solen) och nyårsfyrverkeri. Förhandsgranska med `?datum=`.
+
+## Lager och moln
+Varje scen byggs som tre filer: `<scen>.svg` (helbild, används av tester), `<scen>.bg.svg` (himmel, UFO, kullar) och `<scen>.fg.svg` (gubbar, mark, regn/snö, dimma). Sajten lägger månen (`weather/moon.mjs`) och molnen (`weather/clouds.mjs`) *mellan* bakgrund och förgrund, så molnen driver bakom gubbarna och kan skymma månen. Molnen följer SMHI:s molnighet: klart = inga, halvklart = några, mulet = molntäcke. Åskscenen har egna stormmoln.
