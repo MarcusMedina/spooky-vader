@@ -126,3 +126,9 @@ test("seasonal scenes exist for every classification and keep weather outfit", (
   }
   assert.equal(pick(all[0], config).season, null);
 });
+test("fireworks keep the weather's precipitation", () => {
+  const nye = new Date("2026-12-31T23:45:00Z"), c = { tempBand: "cold", precip: "snow", wind: "calm", sky: "cloudy", daylight: "night" };
+  assert.equal(pick(c, config, nye).scene, "fireworks--cold--snow");
+  assert.equal(pick({ ...c, precip: "sleet" }, config, nye).scene, "fireworks--rain--rain");
+  assert.equal(pick({ ...c, precip: "none" }, config, nye).scene, "fireworks--cold");
+});

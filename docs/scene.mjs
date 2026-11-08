@@ -26,9 +26,11 @@ export function pickScene(c, cfg, when) {
   const s = seasonAt(when, cfg);
   const activity = s.fireworks ? "fireworks" : rule.activity;
   const xmas = s.xmas && !s.fireworks;
+  // fireworks keep the weather's precipitation: rain/sleet/thunder -> rain, snow -> snow
+  const wet = s.fireworks ? ({ rain: "rain", sleet: "rain", thunder: "rain", snow: "snow" }[c.precip] ?? "") : "";
   return {
     rule: s.fireworks ? "fireworks" : rule.id, activity, outfit, season: xmas ? "xmas" : s.fireworks ? "fireworks" : null,
-    scene: `${activity}--${outfit}${xmas ? "--xmas" : ""}`,
+    scene: `${activity}--${outfit}${xmas ? "--xmas" : ""}${wet ? "--" + wet : ""}`,
     ready: cfg.outfits[outfit].art === "ready" && cfg.activities[activity] === "ready",
   };
 }

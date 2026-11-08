@@ -23,7 +23,7 @@ def combos():
     for r in RULES["rules"]:
         for t in r["when"].get("tempBand", TEMPS):
             s.add((r["activity"], RULES["outfitByTemp"][t] if r["outfit"] == "auto" else r["outfit"]))
-    for o in RULES["outfits"]: s.add(("fireworks", o))
+    for o in RULES["outfits"]: s.add(("fireworks", o))  # precip variants are added in main
     return sorted(s)
 
 def rot(v, deg):
@@ -259,7 +259,9 @@ def head_bob_css():
             "@keyframes sway{from{transform:translateX(-22px)}to{transform:translateX(22px)}} .sway{animation:sway ease-in-out infinite alternate}"
             "@keyframes drift{from{transform:translateX(-45px)}to{transform:translateX(45px)}} .drift{animation:drift 11s ease-in-out infinite alternate}"
             "@keyframes hover{from{transform:translateY(-5px)}to{transform:translateY(7px)}} .hover{animation:hover 3.6s ease-in-out infinite alternate}"
-            "@keyframes flash{0%,100%{opacity:0}1%{opacity:.22}3%{opacity:0}5%{opacity:.16}9%{opacity:0}} .flash{animation:flash 13s linear infinite}")
+            "@keyframes flash{0%,100%,12%,48%,62%{opacity:0}1%{opacity:.22}3%{opacity:0}5%{opacity:.16}9%{opacity:0}51%{opacity:.2}53%{opacity:0}55%{opacity:.14}59%{opacity:0}} .flash{animation:flash 13s linear infinite}"
+            "@keyframes bolta{0%,100%,12%,62%{opacity:0}1%{opacity:1}3%{opacity:0}5%{opacity:1}9%{opacity:0}} .bolta{animation:bolta 13s linear infinite}"
+            "@keyframes boltb{0%,100%,48%,62%{opacity:0}51%{opacity:1}53%{opacity:0}55%{opacity:1}59%{opacity:0}} .boltb{animation:boltb 13s linear infinite}")
     return f'<style>@media (prefers-reduced-motion: no-preference) {{{css}}}</style>'
 
 def falling(content, dur, delay=0, sway=None):
@@ -283,6 +285,12 @@ def snow_layers():
         o += falling(f'<g fill="#fff" opacity="{op}">{c}</g>', dur, rnd.random()*dur, sway=sw)
     return o
 
+BOLT = re.compile(r'<path d="M 560 120 L 508 250[^>]*/>')
+def storm_back():
+    t = part("storm-wide"); m = BOLT.search(t); assert m, "bolt path not found in storm-wide"
+    bolt = m.group(0)
+    return BOLT.sub("", t) + f'<g class="bolta" transform="translate(-390 0)">{bolt}</g><g class="boltb" transform="translate(400 20)">{bolt}</g>'
+
 def front_part(n):
     if n == "rain": return rain_layers()
     if n == "snow": return snow_layers()
@@ -298,8 +306,10 @@ def part(name):
     body = re.sub(r"var\(--[\w-]+,\s*(#[0-9a-fA-F]{3,8})\)", r"\1", body)
     return f'<g transform="scale({W/vb} 1)">{body}</g>'
 
-def build(activity, outfit, xmas=False):
-    a = CFG["activities"][activity]
+def build(activity, outfit, xmas=False, precip=""):
+    a = dict(CFG["activities"][activity])
+    if precip == "rain": a["front"] = ["rain"]; a["floor"] = ["puddles-wide"]
+    if precip == "snow": a["front"] = ["snow"]
     ctx_base = {"mid_y": 252 + 0}
     pose = POSES["activities"].get(activity, {})
     docs = {}
@@ -352,7 +362,7 @@ def build(activity, outfit, xmas=False):
 
 def alien_scene(a, outfit, figs, defs, tint, beam):
     for o, n in (('#eef3ea','#cfdad3'),('#d3d9cb','#a8b8b0'),('#8c978c','#5d6f67'),('#f4f8ee','#d7e2db'),('#7f8a7f','#52625b')): defs = defs.replace(o, n)
-    sky = "".join(part(n) for n in a.get("back", [])) + (fireworks_svg() if a.get("fireworks") else "")
+    sky = "".join(storm_back() if n == "storm-wide" else part(n) for n in a.get("back", [])) + (fireworks_svg() if a.get("fireworks") else "")
     floorprops = "".join(part(n) for n in a.get("floor", []))
     front = "".join(front_part(n) for n in a.get("front", []))
     if "storm-wide" in a.get("back", []): front += f'<rect class="flash" width="{W}" height="{H}" fill="#d6e4ff" opacity="0"/>'
@@ -372,12 +382,14 @@ def alien_scene(a, outfit, figs, defs, tint, beam):
 
 if __name__ == "__main__":
     png = "--png" in sys.argv
-    jobs = [(a, o, False) for a, o in combos()] + ([(a, o, True) for a, o in combos() if a != "fireworks"] if STYLE == "alien" else [])
-    for act, outfit, xmas in jobs:
-        svg = build(act, outfit, xmas)
+    base = combos()
+    jobs = [(a, o, False, "") for a, o in base] + [("fireworks", o, False, p) for o in RULES["outfits"] for p in ("rain", "snow")]
+    if STYLE == "alien": jobs += [(a, o, True, "") for a, o in base if a != "fireworks"]
+    for act, outfit, xmas, precip in jobs:
+        svg = build(act, outfit, xmas, precip)
         ids = re.findall(r'\bid="([^"]+)"', svg); dup = sorted({i for i in ids if ids.count(i) > 1})
         if dup: sys.exit(f"duplicate ids in {act}--{outfit}: {dup[:5]}")
-        sfx = "--xmas" if xmas else ""
+        sfx = "--xmas" if xmas else (f"--{precip}" if precip else "")
         f = out / f"{act}--{outfit}{sfx}.svg"; f.write_text(svg)
         if png: subprocess.run(["rsvg-convert", "-o", str(f.with_suffix(".png")), str(f)], check=True)
         print("built", f.name, len(svg)//1024, "KB")
