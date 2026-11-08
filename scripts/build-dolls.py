@@ -348,6 +348,7 @@ def build(activity, outfit, xmas=False, precip=""):
         f'<clipPath id="floorclip"><rect y="{GROUND}" width="{W}" height="{H-GROUND}"/></clipPath></defs>')
     defs += head_bob_css()
     figs = out_svg["female"] + out_svg["male"]
+    FIG_PARTS.clear(); FIG_PARTS.update(out_svg)
     if STYLE == "alien":
         return alien_scene(a, outfit, figs, defs, tint, beam)
     back = "".join(part(n) for n in ["snow-ground"] if outfit == "cold") 
@@ -368,6 +369,7 @@ def build(activity, outfit, xmas=False, precip=""):
     return svg
 
 LAYERS = {}
+FIG_PARTS = {}
 
 def alien_scene(a, outfit, figs, defs, tint, beam):
     for o, n in (('#eef3ea','#cfdad3'),('#d3d9cb','#a8b8b0'),('#8c978c','#5d6f67'),('#f4f8ee','#d7e2db'),('#7f8a7f','#52625b')): defs = defs.replace(o, n)
@@ -387,8 +389,11 @@ def alien_scene(a, outfit, figs, defs, tint, beam):
     field = f'<rect y="{GROUND}" width="{W}" height="{H-GROUND}" fill="url(#field)"/><g stroke="#2b4d37" stroke-width="2" opacity=".6"><path d="M 0 860 H 1090 M 0 880 H 1090"/></g>'
     head = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">{defs}{grad}'
     bg = f'<rect width="{W}" height="{H}" fill="url(#nsky)"/>{stars}{sky}{hills}{ufo}'
-    fg = f'{field}{back}{floorprops}{figs}{front}<rect width="{W}" height="{H}" fill="url(#vig)"/>'
-    LAYERS.clear(); LAYERS.update(bg=head + bg + "</svg>", fg=head + fg + "</svg>")  # page stacks: bg, moon, clouds, fg
+    gnd = f'{field}{back}{floorprops}'
+    top = f'{front}<rect width="{W}" height="{H}" fill="url(#vig)"/>'
+    # page stacks: bg, moon, clouds, gnd, f, m, top  (f and m are separate so they can run off on click)
+    LAYERS.clear(); LAYERS.update({k: head + v + "</svg>" for k, v in dict(bg=bg, gnd=gnd, f=FIG_PARTS["female"], m=FIG_PARTS["male"], top=top).items()})
+    fg = gnd + FIG_PARTS["female"] + FIG_PARTS["male"] + top
     svg = head + bg + fg + "</svg>"
     return svg
 
@@ -404,7 +409,7 @@ if __name__ == "__main__":
         sfx = "--xmas" if xmas else (f"--{precip}" if precip else "")
         f = out / f"{act}--{outfit}{sfx}.svg"; f.write_text(svg)
         if STYLE == "alien":
-            for layer in ("bg", "fg"):
+            for layer in ("bg", "gnd", "f", "m", "top"):
                 ids = re.findall(r'\bid="([^"]+)"', LAYERS[layer])
                 if len(ids) != len(set(ids)): sys.exit(f"duplicate ids in {f.stem}.{layer}")
                 (out / f"{f.stem}.{layer}.svg").write_text(LAYERS[layer])

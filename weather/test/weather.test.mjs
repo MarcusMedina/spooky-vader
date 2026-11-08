@@ -74,7 +74,7 @@ test("every reachable (activity, outfit) has a built duo scene file", () => {
     const s = pickScene(c);
     assert.equal(config.outfits[s.outfit].art, "ready", s.outfit);
     assert.equal(config.activities[s.activity], "ready", s.activity);
-    for (const ext of ["svg", "bg.svg", "fg.svg"]) assert.ok(existsSync(new URL(`../../dolls/dist/${s.scene}.${ext}`, import.meta.url)), `${s.scene}.${ext}`);
+    for (const ext of ["svg", "bg.svg", "gnd.svg", "f.svg", "m.svg", "top.svg"]) assert.ok(existsSync(new URL(`../../dolls/dist/${s.scene}.${ext}`, import.meta.url)), `${s.scene}.${ext}`);
   }
 });
 test("SNOW1g parsing ignores 9999 and handles percent cloud cover", async () => {

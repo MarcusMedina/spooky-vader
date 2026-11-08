@@ -2,6 +2,7 @@ import { classify, tempBand, windClass } from "./classify.mjs";
 import { pickScene } from "./scene.mjs";
 import { moonSvg, moonPhase } from "./moon.mjs";
 import { cloudsSvg } from "./clouds.mjs";
+import { attachScare } from "./scare.mjs";
 import { fetchForecast, upcoming, classifyEntry } from "./smhi.mjs";
 
 const [rules, texts] = await Promise.all(["rules.json", "texts.sv.json"].map((f) => fetch(f).then((r) => r.json())));
@@ -29,11 +30,14 @@ const fmtT = (t) => `${Math.round(t)}°`;
 
 function show(c, extra = {}) {
   const p = pickScene(c, rules, extra.when ?? clock()), tx = texts.activities[p.activity];
-  const img = $("scene"), bg = $("sceneBg");
-  img.classList.add("swap"); bg.classList.add("swap");
-  img.onload = () => img.classList.remove("swap"); bg.onload = () => bg.classList.remove("swap");
-  bg.src = `scenes/${p.scene}.bg.svg`;
-  img.src = `scenes/${p.scene}.fg.svg`;
+  scare.reset(); // new scene: figures are home again
+  const layers = { sceneBg: "bg", sceneGnd: "gnd", sceneF: "f", sceneM: "m", scene: "top" };
+  for (const [id, ext] of Object.entries(layers)) {
+    const el = $(id); el.classList.add("swap");
+    el.onload = () => el.classList.remove("swap");
+    el.src = `scenes/${p.scene}.${ext}.svg`;
+  }
+  const img = $("scene");
   $("clouds").innerHTML = p.activity === "hide-thunder" ? "" : cloudsSvg(c.sky); // thunder scenes bring their own storm clouds
   img.alt = `${tx.label}, ${texts.outfits[p.outfit].toLowerCase()}`;
   const when = extra.when ?? clock(), moon = $("moon");
@@ -44,8 +48,15 @@ function show(c, extra = {}) {
   $("pills").innerHTML = [["Temp", L.temp[c.tempBand] + (extra.t !== undefined ? ` ${fmtT(extra.t)}` : "")], ["Vind", L.wind[c.wind]],
     ["Nederbörd", L.precip[c.precip]], ["Himmel", L.sky[c.sky]], ["Kläder", texts.outfits[p.outfit]]]
     .map(([a, b]) => `<span class="pill">${a}: <b>${b}</b></span>`).join("");
+  lastPick = p;
   return p;
 }
+
+const scare = attachScare($("frame"), {
+  onAway: () => ($("line").textContent = "En gubbe sprang iväg! UFO:n hämtar den om en liten stund."),
+  onBack: () => { const p = lastPick; if (p) $("line").textContent = texts.activities[p.activity].line + (p.season === "xmas" ? " " + texts.seasons.xmas : ""); },
+});
+let lastPick = null;
 
 // ---- forecast ------------------------------------------------------------
 let place = { name: "Kungsbacka", lat: 57.4872, lon: 12.076 }, forecast = null, picked = 0;

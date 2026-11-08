@@ -52,3 +52,4 @@ footer a{color:var(--ink)}
 #moon{position:absolute;left:10.8%;top:6%;width:9.6%;pointer-events:none}#moon[hidden]{display:none}#moon svg{display:block;width:100%;height:auto}
 @media (prefers-reduced-motion:no-preference){#moon{transition:opacity .4s}}
 #clouds{position:absolute;inset:0;pointer-events:none}#clouds svg{display:block;width:100%;height:100%}
+.frame:focus-visible{outline:3px solid var(--accent,#f2c230);outline-offset:3px}.frame{-webkit-tap-highlight-color:transparent}

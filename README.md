@@ -39,4 +39,7 @@ Gubbarna gungar på huvudet ibland (CSS i varje SVG, ingen JavaScript). Mannen v
 `weather/moon.mjs` räknar ut månfasen ur datumet (ingen nätverksanrop, ungefär ±½ dygn) och sajten ritar månen med rätt fas ovanpå scenen uppe till vänster. Den göms vid solbad (solen) och nyårsfyrverkeri. Förhandsgranska med `?datum=`.
 
 ## Lager och moln
-Varje scen byggs som tre filer: `<scen>.svg` (helbild, används av tester), `<scen>.bg.svg` (himmel, UFO, kullar) och `<scen>.fg.svg` (gubbar, mark, regn/snö, dimma). Sajten lägger månen (`weather/moon.mjs`) och molnen (`weather/clouds.mjs`) *mellan* bakgrund och förgrund, så molnen driver bakom gubbarna och kan skymma månen. Molnen följer SMHI:s molnighet: klart = inga, halvklart = några, mulet = molntäcke. Åskscenen har egna stormmoln.
+Varje scen byggs som flera filer: `<scen>.svg` (helbild, används av tester) och sex lager som sajten stapplar: `bg` (himmel, UFO, kullar), månen och molnen (`weather/moon.mjs`, `weather/clouds.mjs`, ritas av sidan), `gnd` (mark), `f` (kvinnan), `m` (mannen) och `top` (regn, snö, dimma, vinjett). Molnen driver därför bakom gubbarna och kan skymma månen. De följer SMHI:s molnighet: klart = inga, halvklart = några, mulet = molntäcke. Åskscenen har egna stormmoln.
+
+## Klicka på gubbarna
+`site/scare.mjs`: klicka på en gubbe så springer just den åt sin sida (mannen åt vänster, kvinnan åt höger). Efter 15 sekunder beamas den tillbaka av UFO:n. De är oberoende av varandra. Fungerar även med tangentbord (Enter/mellanslag på scenen) och utan rörelse vid `prefers-reduced-motion`.
