@@ -33,4 +33,4 @@ Styrs av `seasons` i `weather/rules.json` (svensk lokal tid, Europe/Stockholm):
 - Julmössorna finns bara i Greys-stilen (`--shop` bygger dem inte).
 
 ## Animation
-Gubbarna gungar på huvudet ibland (CSS i varje SVG, ingen JavaScript). Mannen var 29:e sekund och kvinnan var 41:a, första gungningen efter 21 respektive 27 s, så det ser oregelbundet ut. Avstängt vid `prefers-reduced-motion`.
+Gubbarna gungar på huvudet ibland (CSS i varje SVG, ingen JavaScript). Mannen var 29:e sekund och kvinnan var 41:a, första gungningen efter 21 respektive 27 s, så det ser oregelbundet ut. Regn, snö, löv, dimma, UFO-svävning och åskblixtar rör sig också. Allt avstängt vid `prefers-reduced-motion`.

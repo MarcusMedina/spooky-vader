@@ -255,7 +255,40 @@ def head_bob_css():
         pts = [(0, 0), (start/period*100, 0)] + [((start + dur*i/(len(seq)-1))/period*100, a) for i, a in enumerate(seq)] + [(100, 0)]
         kf = "".join(f"{x:.2f}% {{transform:rotate({a}deg)}}" for x, a in pts)
         css += f"@keyframes bob-{g} {{{kf}}} .hb-{g} {{animation: bob-{g} {period}s ease-in-out infinite; transform-origin: 0px 236px}}"
+    css += ("@keyframes fall{to{transform:translateY(900px)}} .fall{animation:fall linear infinite}"
+            "@keyframes sway{from{transform:translateX(-22px)}to{transform:translateX(22px)}} .sway{animation:sway ease-in-out infinite alternate}"
+            "@keyframes drift{from{transform:translateX(-45px)}to{transform:translateX(45px)}} .drift{animation:drift 11s ease-in-out infinite alternate}"
+            "@keyframes hover{from{transform:translateY(-5px)}to{transform:translateY(7px)}} .hover{animation:hover 3.6s ease-in-out infinite alternate}"
+            "@keyframes flash{0%,100%{opacity:0}1%{opacity:.22}3%{opacity:0}5%{opacity:.16}9%{opacity:0}} .flash{animation:flash 13s linear infinite}")
     return f'<style>@media (prefers-reduced-motion: no-preference) {{{css}}}</style>'
+
+def falling(content, dur, delay=0, sway=None):
+    """Two stacked copies scrolling down by one screen height: seamless loop. sway=(seconds) adds sideways wobble."""
+    inner = f'<g class="fall" style="animation-duration:{dur}s;animation-delay:-{delay}s"><g>{content}</g><g transform="translate(0 -{H})">{content}</g></g>'
+    return f'<g class="sway" style="animation-duration:{sway}s;animation-delay:-{sway/2}s">{inner}</g>' if sway else inner
+
+def rain_layers():
+    import random
+    rnd = random.Random(11); o = ""
+    for n, (dur, w, op, ln) in enumerate([(1.5, 2, .35, 50), (1.1, 3, .5, 70), (.8, 4, .7, 95)]):
+        d = "".join(f"M {x} {y} l -{ln*.3:.0f} {ln}" for x, y in ((rnd.randrange(0, W+80), rnd.randrange(0, H)) for _ in range(42)))
+        o += falling(f'<path d="{d}" stroke="#b8def8" stroke-width="{w}" stroke-linecap="round" opacity="{op}" fill="none"/>', dur, rnd.random()*dur)
+    return o
+
+def snow_layers():
+    import random
+    rnd = random.Random(5); o = ""
+    for n, (dur, rr, op, sw) in enumerate([(19, (2, 3.5), .55, 5), (13, (3.5, 5.5), .75, 4), (8.5, (5.5, 8), .92, 3)]):
+        c = "".join(f'<circle cx="{rnd.randrange(0, W)}" cy="{rnd.randrange(0, H)}" r="{rnd.uniform(*rr):.1f}"/>' for _ in range(40))
+        o += falling(f'<g fill="#fff" opacity="{op}">{c}</g>', dur, rnd.random()*dur, sway=sw)
+    return o
+
+def front_part(n):
+    if n == "rain": return rain_layers()
+    if n == "snow": return snow_layers()
+    if n == "leaves-wide": return falling(part(n), 24, 6, sway=6)
+    if n == "fog-wide": return f'<g class="drift">{part(n)}</g>'
+    return part(n)
 
 def part(name):
     p = PARTS / f"{name}.svg"
@@ -321,10 +354,11 @@ def alien_scene(a, outfit, figs, defs, tint, beam):
     for o, n in (('#eef3ea','#cfdad3'),('#d3d9cb','#a8b8b0'),('#8c978c','#5d6f67'),('#f4f8ee','#d7e2db'),('#7f8a7f','#52625b')): defs = defs.replace(o, n)
     sky = "".join(part(n) for n in a.get("back", [])) + (fireworks_svg() if a.get("fireworks") else "")
     floorprops = "".join(part(n) for n in a.get("floor", []))
-    front = "".join(part(n) for n in a.get("front", []))
+    front = "".join(front_part(n) for n in a.get("front", []))
+    if "storm-wide" in a.get("back", []): front += f'<rect class="flash" width="{W}" height="{H}" fill="#d6e4ff" opacity="0"/>'
     stars = "".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" opacity=".8"/>' for x, y, r in [(70,60,2),(190,120,1.5),(330,40,2),(470,90,1.5),(600,50,2),(780,70,1.5),(900,130,2),(1020,60,1.5),(130,230,1.5),(990,250,2),(60,380,1.5),(1040,420,1.5)])
     back = "".join(part(n) for n in ["snow-ground"] if outfit == "cold")
-    ufo = (f'<g><path d="M 395 150 L 695 150 L 860 {GROUND} L 230 {GROUND} Z" fill="url(#ubeam)"/>'
+    ufo = (f'<g class="hover"><path d="M 395 150 L 695 150 L 860 {GROUND} L 230 {GROUND} Z" fill="url(#ubeam)"/>'
            '<ellipse cx="545" cy="112" rx="170" ry="38" fill="#4b5560" stroke="#1a1f24" stroke-width="5"/><path d="M 455 100 Q 545 24 635 100 Z" fill="#9fd8c9" stroke="#1a1f24" stroke-width="5" opacity=".9"/>'
            '<path d="M 380 118 Q 545 160 710 118 Q 545 142 380 118 Z" fill="#2b323a"/><g fill="#d8ffa8">' + "".join(f'<circle cx="{x}" cy="118" r="7"/>' for x in (420, 470, 520, 570, 620, 670)) + '</g></g>')
     grad = ('<defs><linearGradient id="ubeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8ffa8" stop-opacity=".55"/><stop offset="1" stop-color="#b6ff9a" stop-opacity=".08"/></linearGradient>'
