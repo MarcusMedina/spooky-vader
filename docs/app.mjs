@@ -93,14 +93,17 @@ async function load() {
 const sel = $("city");
 CITIES.forEach(([n], i) => sel.add(new Option(n, i)));
 try { const s = localStorage.getItem("vadertroll-city"); if (s && CITIES[+s]) sel.value = s; } catch {}
-const useCity = () => { const [name, lat, lon] = CITIES[+sel.value]; place = { name, lat, lon };
+const geoOpt = () => sel.querySelector('option[value="geo"]');
+const useCity = () => { if (sel.value === "geo") return; geoOpt()?.remove(); // a city was picked: drop "Din plats"
+  const [name, lat, lon] = CITIES[+sel.value]; place = { name, lat, lon };
   try { localStorage.setItem("vadertroll-city", sel.value); } catch {} load(); };
 sel.onchange = useCity;
 $("geo").onclick = () => {
   if (!navigator.geolocation) return setStatus("Din webbläsare saknar platstjänst.");
   setStatus("Frågar efter din plats…");
   navigator.geolocation.getCurrentPosition(
-    (p) => { place = { name: "Din plats", lat: p.coords.latitude, lon: p.coords.longitude }; load(); },
+    (p) => { place = { name: "Din plats", lat: p.coords.latitude, lon: p.coords.longitude };
+      geoOpt() ?? sel.add(new Option("Din plats", "geo"), 0); sel.value = "geo"; load(); }, // not saved: the position stays in memory only
     () => setStatus("Ingen platsåtkomst. Välj en stad i listan."), { timeout: 8000, maximumAge: 600000 });
 };
 
