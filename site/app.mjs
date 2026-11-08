@@ -3,6 +3,7 @@ import { pickScene } from "./scene.mjs";
 import { moonSvg, moonPhase } from "./moon.mjs";
 import { cloudsSvg } from "./clouds.mjs";
 import { attachScare } from "./scare.mjs";
+import { placeLabel } from "./places.mjs";
 import { fetchForecast, upcoming, classifyEntry } from "./smhi.mjs";
 
 const [rules, texts] = await Promise.all(["rules.json", "texts.sv.json"].map((f) => fetch(f).then((r) => r.json())));
@@ -102,8 +103,12 @@ $("geo").onclick = () => {
   if (!navigator.geolocation) return setStatus("Din webbläsare saknar platstjänst.");
   setStatus("Frågar efter din plats…");
   navigator.geolocation.getCurrentPosition(
-    (p) => { place = { name: "Din plats", lat: p.coords.latitude, lon: p.coords.longitude };
-      geoOpt() ?? sel.add(new Option("Din plats", "geo"), 0); sel.value = "geo"; load(); }, // not saved: the position stays in memory only
+    async (p) => {
+      const { latitude: lat, longitude: lon } = p.coords;
+      let name = "Din plats";
+      try { name = placeLabel(await fetch("places.json").then((r) => r.json()), lat, lon); } catch {} // bundled list: the position never leaves the browser except to SMHI
+      place = { name, lat, lon };
+      (geoOpt() ?? sel.add(new Option(name, "geo"), 0)); geoOpt().textContent = name; sel.value = "geo"; load(); }, // not saved: the position stays in memory only
     () => setStatus("Ingen platsåtkomst. Välj en stad i listan."), { timeout: 8000, maximumAge: 600000 });
 };
 

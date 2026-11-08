@@ -152,3 +152,13 @@ test("clouds: none for sunny/fog, more for cloudy than partly", () => {
   const n = (x) => (cloudsSvg(x).match(/class="cl"/g) ?? []).length;
   assert.ok(n("partly") > 0 && n("cloudy") > n("partly"));
 });
+
+import { placeLabel } from "../places.mjs";
+const PLACES = JSON.parse(readFileSync(new URL("../../site/places.json", import.meta.url)));
+test("place names from the bundled list", () => {
+  assert.equal(placeLabel(PLACES, 57.4872, 12.076), "Kungsbacka");
+  assert.equal(placeLabel(PLACES, 57.7089, 11.9746), "Göteborg");
+  assert.equal(placeLabel(PLACES, 57.2, 12.6), "Nära Veddige");     // countryside between towns
+  assert.equal(placeLabel(PLACES, 52.5, 13.4), "Din plats");           // Berlin: nothing near
+  assert.equal(placeLabel([], 57, 12), "Din plats");
+});

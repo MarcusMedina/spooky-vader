@@ -46,3 +46,6 @@ Varje scen byggs som flera filer: `<scen>.svg` (helbild, används av tester) och
 
 ## Installera (PWA)
 Sajten är en installerbar app: `site/manifest.webmanifest`, ikoner i `site/icons/` och en service worker (`site/sw.js`) som sparar appens filer för offline-start. Cache-namnet är en hash av hela bygget (`build-site.mjs`), så varje ny version tömmer den gamla cachen. Appfiler hämtas nätverk först, scenlager cache först. SMHI-anrop går alltid direkt mot SMHI och cachas inte. På Android/Chrome visas en "Installera"-knapp; på iPhone: Dela → Lägg till på hemskärmen.
+
+## Ortsnamn för "Min plats"
+`site/places.json` (832 svenska orter, genererad av `scripts/make-places.py`, data från GeoNames CC BY 4.0) och `weather/places.mjs`: närmaste ort inom 6 km visas som namn ("Kungsbacka"), inom 60 km som "Nära X", annars "Din plats". Allt sker lokalt, ingen omvänd geokodning mot någon extern tjänst.
