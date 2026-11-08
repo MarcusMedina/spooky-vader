@@ -291,6 +291,13 @@ def storm_back():
     bolt = m.group(0)
     return BOLT.sub("", t) + f'<g class="bolta" transform="translate(-390 0)">{bolt}</g><g class="boltb" transform="translate(400 20)">{bolt}</g>'
 
+MOON = re.compile(r'<circle cx="170" cy="130" r="48"[^>]*/><circle cx="188" cy="118"[^>]*/>')
+def sky_part(n):
+    """Alien scenes: the moon is drawn by the page (real phase), so strip the baked-in one."""
+    if n == "storm-wide": return storm_back()
+    t = part(n)
+    return MOON.sub("", t) if n == "night-sky-wide" else t
+
 def front_part(n):
     if n == "rain": return rain_layers()
     if n == "snow": return snow_layers()
@@ -362,7 +369,7 @@ def build(activity, outfit, xmas=False, precip=""):
 
 def alien_scene(a, outfit, figs, defs, tint, beam):
     for o, n in (('#eef3ea','#cfdad3'),('#d3d9cb','#a8b8b0'),('#8c978c','#5d6f67'),('#f4f8ee','#d7e2db'),('#7f8a7f','#52625b')): defs = defs.replace(o, n)
-    sky = "".join(storm_back() if n == "storm-wide" else part(n) for n in a.get("back", [])) + (fireworks_svg() if a.get("fireworks") else "")
+    sky = "".join(sky_part(n) for n in a.get("back", [])) + (fireworks_svg() if a.get("fireworks") else "")
     floorprops = "".join(part(n) for n in a.get("floor", []))
     front = "".join(front_part(n) for n in a.get("front", []))
     if "storm-wide" in a.get("back", []): front += f'<rect class="flash" width="{W}" height="{H}" fill="#d6e4ff" opacity="0"/>'

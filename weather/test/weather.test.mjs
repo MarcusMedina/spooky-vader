@@ -132,3 +132,16 @@ test("fireworks keep the weather's precipitation", () => {
   assert.equal(pick({ ...c, precip: "sleet" }, config, nye).scene, "fireworks--rain--rain");
   assert.equal(pick({ ...c, precip: "none" }, config, nye).scene, "fireworks--cold");
 });
+
+// ---- moon phase ----
+import { moonPhase, moonSvg } from "../moon.mjs";
+test("moon phase matches known new/full moons (within a day)", () => {
+  assert.ok(moonPhase(new Date("2026-02-17T12:01:00Z")).illumination < 0.03, "new moon 2026-02-17");
+  assert.ok(moonPhase(new Date("2026-01-03T10:03:00Z")).illumination > 0.97, "full moon 2026-01-03");
+  const q = moonPhase(new Date("2026-01-10T15:48:00Z")); // last quarter
+  assert.ok(Math.abs(q.illumination - 0.5) < 0.08 && !q.waxing, "last quarter");
+  assert.equal(moonPhase(new Date("2026-01-03T10:03:00Z")).name, "Fullmåne");
+});
+test("moon svg renders for a whole month without errors", () => {
+  for (let d = 0; d < 30; d++) assert.match(moonSvg(new Date(Date.UTC(2026, 10, 1 + d))), /^<svg[\s\S]*<\/svg>$/);
+});

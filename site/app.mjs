@@ -1,5 +1,6 @@
 import { classify, tempBand, windClass } from "./classify.mjs";
 import { pickScene } from "./scene.mjs";
+import { moonSvg, moonPhase } from "./moon.mjs";
 import { fetchForecast, upcoming, classifyEntry } from "./smhi.mjs";
 
 const [rules, texts] = await Promise.all(["rules.json", "texts.sv.json"].map((f) => fetch(f).then((r) => r.json())));
@@ -32,6 +33,9 @@ function show(c, extra = {}) {
   img.onload = () => img.classList.remove("swap");
   img.src = `scenes/${p.scene}.svg`;
   img.alt = `${tx.label}, ${texts.outfits[p.outfit].toLowerCase()}`;
+  const when = extra.when ?? clock(), moon = $("moon");
+  moon.hidden = ["sunbathe", "fireworks"].includes(p.activity); // sun / fireworks own that part of the sky
+  if (!moon.hidden) { moon.innerHTML = moonSvg(when); moon.title = moonPhase(when).name; }
   $("act").textContent = tx.label;
   $("line").textContent = tx.line + (p.season === "xmas" ? " " + texts.seasons.xmas : "");
   $("pills").innerHTML = [["Temp", L.temp[c.tempBand] + (extra.t !== undefined ? ` ${fmtT(extra.t)}` : "")], ["Vind", L.wind[c.wind]],

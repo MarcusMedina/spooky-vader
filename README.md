@@ -34,3 +34,6 @@ Styrs av `seasons` i `weather/rules.json` (svensk lokal tid, Europe/Stockholm):
 
 ## Animation
 Gubbarna gungar på huvudet ibland (CSS i varje SVG, ingen JavaScript). Mannen var 29:e sekund och kvinnan var 41:a, första gungningen efter 21 respektive 27 s, så det ser oregelbundet ut. Regn, snö, löv, dimma, UFO-svävning och åskblixtar rör sig också. Allt avstängt vid `prefers-reduced-motion`.
+
+## Månen
+`weather/moon.mjs` räknar ut månfasen ur datumet (ingen nätverksanrop, ungefär ±½ dygn) och sajten ritar månen med rätt fas ovanpå scenen uppe till vänster. Den göms vid solbad (solen) och nyårsfyrverkeri. Förhandsgranska med `?datum=`.
