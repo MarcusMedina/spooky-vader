@@ -1,4 +1,4 @@
-import { classify, tempBand, windClass } from "./classify.mjs";
+import { classify, tempBand, windClass, sunTimes } from "./classify.mjs";
 import { pickScene } from "./scene.mjs";
 import { moonSvg, moonPhase } from "./moon.mjs";
 import { cloudsSvg } from "./clouds.mjs";
@@ -29,6 +29,12 @@ const forced = new URLSearchParams(location.search).get("datum");
 const clock = () => (forced && !isNaN(new Date(forced)) ? new Date(forced) : new Date());
 const fmtT = (t) => `${Math.round(t)}°`;
 
+const sunText = (when) => {
+  const s = sunTimes(when, place.lat, place.lon);
+  return s.kind === "always-up" ? "Midnattssol" : s.kind === "always-down" ? "Solen når inte upp"
+    : `upp ${hhmm(s.sunrise)} · ner ${hhmm(s.sunset)}`;
+};
+
 function show(c, extra = {}) {
   const p = pickScene(c, rules, extra.when ?? clock()), tx = texts.activities[p.activity];
   scare.reset(); // new scene: figures are home again
@@ -39,15 +45,17 @@ function show(c, extra = {}) {
     el.src = `scenes/${p.scene}.${ext}.svg`;
   }
   const img = $("scene");
-  $("clouds").innerHTML = p.activity === "hide-thunder" ? "" : cloudsSvg(c.sky); // thunder scenes bring their own storm clouds
+  $("clouds").innerHTML = p.activity === "hide-thunder" ? "" : cloudsSvg(c.sky, c.daylight); // thunder scenes bring their own storm clouds
   img.alt = `${tx.label}, ${texts.outfits[p.outfit].toLowerCase()}`;
-  const when = extra.when ?? clock(), moon = $("moon");
-  moon.hidden = ["sunbathe", "fireworks"].includes(p.activity); // sun / fireworks own that part of the sky
+  const when = extra.when ?? clock(), moon = $("moon"), frame = $("frame");
+  frame.dataset.daylight = c.daylight; // sky colour follows the sun at the chosen place
+  frame.toggleAttribute("data-overcast", c.sky === "cloudy" || c.sky === "fog" || c.precip !== "none");
+  moon.hidden = c.daylight === "day" || ["sunbathe", "fireworks"].includes(p.activity); // sun / fireworks own that part of the sky
   if (!moon.hidden) { moon.innerHTML = moonSvg(when); moon.title = moonPhase(when).name; }
   $("act").textContent = tx.label;
   $("line").textContent = tx.line + (p.season === "xmas" ? " " + texts.seasons.xmas : "");
   $("pills").innerHTML = [["Temp", L.temp[c.tempBand] + (extra.t !== undefined ? ` ${fmtT(extra.t)}` : "")], ["Vind", L.wind[c.wind]],
-    ["Nederbörd", L.precip[c.precip]], ["Himmel", L.sky[c.sky]], ["Kläder", texts.outfits[p.outfit]]]
+    ["Nederbörd", L.precip[c.precip]], ["Himmel", L.sky[c.sky]], ["Sol", sunText(when)], ["Kläder", texts.outfits[p.outfit]]]
     .map(([a, b]) => `<span class="pill">${a}: <b>${b}</b></span>`).join("");
   lastPick = p;
   return p;

@@ -35,6 +35,22 @@ test("daylight in Kungsbacka", () => {
   assert.equal(C.isDaylight("2026-12-21T11:00:00Z", lat, lon), "day");
 });
 
+test("sunTimes: sunrise and sunset in Kungsbacka (Swedish local time)", () => {
+  const hm = (d) => d.toLocaleTimeString("sv-SE", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Stockholm" });
+  const [lat, lon] = [57.49, 12.08];
+  const jun = C.sunTimes("2026-06-21T10:00:00Z", lat, lon);
+  assert.equal(jun.kind, "normal");
+  assert.ok(Math.abs(Number(hm(jun.sunrise).slice(0, 2)) - 4) <= 1, hm(jun.sunrise));   // ~04:2x
+  assert.ok(Math.abs(Number(hm(jun.sunset).slice(0, 2)) - 22) <= 1, hm(jun.sunset));    // ~22:0x
+  const dec = C.sunTimes("2026-12-21T11:00:00Z", lat, lon);
+  assert.ok(Math.abs(Number(hm(dec.sunrise).slice(0, 2)) - 8) <= 1, hm(dec.sunrise));   // ~08:4x
+  assert.ok(Math.abs(Number(hm(dec.sunset).slice(0, 2)) - 15) <= 1, hm(dec.sunset));    // ~15:2x
+});
+test("sunTimes: polar day and night in Kiruna", () => {
+  assert.equal(C.sunTimes("2026-06-21T10:00:00Z", 67.86, 20.23).kind, "always-up");
+  assert.equal(C.sunTimes("2026-12-21T10:00:00Z", 67.86, 20.23).kind, "always-down");
+});
+
 // --- exhaustive: every combination yields a valid scene --------------------
 const all = [];
 for (const tempBand of C.TEMP_BANDS) for (const precip of C.PRECIP) for (const wind of C.WINDS)

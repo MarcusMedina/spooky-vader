@@ -388,7 +388,8 @@ def alien_scene(a, outfit, figs, defs, tint, beam):
     hills = f'<path d="M 0 {GROUND-30} Q 200 {GROUND-110} 420 {GROUND-50} Q 650 {GROUND-130} 860 {GROUND-60} Q 980 {GROUND-100} 1090 {GROUND-40} L 1090 {GROUND} L 0 {GROUND} Z" fill="#0b1a14"/>'
     field = f'<rect y="{GROUND}" width="{W}" height="{H-GROUND}" fill="url(#field)"/><g stroke="#2b4d37" stroke-width="2" opacity=".6"><path d="M 0 860 H 1090 M 0 880 H 1090"/></g>'
     head = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">{defs}{grad}'
-    bg = f'<rect width="{W}" height="{H}" fill="url(#nsky)"/>{stars}{sky}{hills}{ufo}'
+    # sky gradient + stars live in the page (#sky), so day/night follows the sun at the chosen place
+    bg = f'{sky}{hills}{ufo}'
     gnd = f'{field}{back}{floorprops}'
     top = f'{front}<rect width="{W}" height="{H}" fill="url(#vig)"/>'
     # page stacks: bg, moon, clouds, gnd, f, m, top  (f and m are separate so they can run off on click)

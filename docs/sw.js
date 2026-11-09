@@ -1,6 +1,6 @@
 // Offline shell. The cache name is versioned per build (build-site.mjs fills in the two constants below),
 // so every deploy invalidates old caches. SMHI requests are cross-origin and never touched here.
-const VERSION = "spooky-1e1d973799b2";
+const VERSION = "spooky-719fbe1ee276";
 const SHELL = ["./","index.html","style.css","app.mjs","scare.mjs","classify.mjs","scene.mjs","smhi.mjs","moon.mjs","clouds.mjs","places.mjs","places.json","rules.json","texts.sv.json","manifest.webmanifest","icons/icon-192.png"];
 
 self.addEventListener("install", (e) => {
